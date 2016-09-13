@@ -1,19 +1,14 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
-from flask.ext.cors import CORS#, cross_domain
+from flask_cors import CORS, cross_origin
 
 import json
 import nltk
 import time
 
-
 app = Flask(__name__)
 CORS(app)
-
-#cors = CORS(app, resources={r"/text_process": {"origins": "*"}})
-#app.config['CORS_HEADERS'] = 'Content-Type'
-
 
 
 from nltk.tokenize import sent_tokenize
