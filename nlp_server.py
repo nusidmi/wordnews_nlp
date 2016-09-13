@@ -25,6 +25,8 @@ pos_tagger = nltk.data.load(nltk.tag._POS_TAGGER)
 
 @app.route("/")
 def index():
+    print 'index'
+    print request
     return "index!"
     
     
