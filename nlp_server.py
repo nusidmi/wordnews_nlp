@@ -92,9 +92,7 @@ def text_process():
 
   text = content['text']
   mode = content['mode']
-
-  #print text
-  #print mode
+  
     
   result = '{}'
   if mode=='sentence_segmenter':
