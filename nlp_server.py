@@ -86,7 +86,9 @@ def text_process():
   print 'text_process'
   print request
   
-  content = request.json
+  #content = request.json
+  content = request.form
+
   text = content['text']
   mode = content['mode']
   
