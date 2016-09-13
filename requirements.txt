@@ -1,3 +1,5 @@
 gunicorn==19.4.5
 whitenoise==2.0.6
 nltk==3.0.2
+Flask==0.11.1
+Flask-Cors==2.1.2
