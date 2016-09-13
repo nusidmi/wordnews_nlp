@@ -74,6 +74,9 @@ def text_process():
   # for get
   #text = request.args.get('text', '')
   #mode = request.args.get('mode', '')
+
+  print 'text_process'
+  print request.args
   
   content = request.json
   text = content['text']
