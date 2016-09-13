@@ -84,7 +84,7 @@ def text_process():
   #mode = request.args.get('mode', '')
 
   print 'text_process'
-  print request.args
+  print request
   
   content = request.json
   text = content['text']
