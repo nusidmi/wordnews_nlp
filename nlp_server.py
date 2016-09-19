@@ -1,26 +1,30 @@
+import json
+import time
+
 from flask import Flask
 from flask import request
 from flask import jsonify
 from flask_cors import CORS, cross_origin
 
-import json
 import nltk
-import time
-
-app = Flask(__name__)
-CORS(app)
-
-
 from nltk.tokenize import sent_tokenize
 from nltk import word_tokenize
 from nltk.tokenize.treebank import TreebankWordTokenizer
 
+from quiz_generator import QuizGenerator
+
+
+app = Flask(__name__)
+CORS(app)
 
 nltk.data.path.append('./nltk_data')
 
 sentence_segmenter = nltk.data.load('tokenizers/punkt/english.pickle')
 word_tokenizer = TreebankWordTokenizer()
 pos_tagger = nltk.data.load(nltk.tag._POS_TAGGER)
+
+generator = QuizGenerator()
+
 
 
 @app.route("/")
@@ -48,7 +52,6 @@ def pos_tag(text):
     word_tags = pos_tagger(tokenized_text)
     return word_tags
 
-
 def process_pipeline(text):
     start = time.time()
     result = []
@@ -73,7 +76,15 @@ def process_pipeline(text):
     end = time.time()
     print (end-start)
     return result
-    
+
+
+def generate_quiz(word, word_pos, knowledge_level, news_category=any):
+    start = time.time()
+    result = generator.get_distractors(word, word_pos, knowledge_level, news_category)
+    end = time.time()
+    print (end-start)
+    return ", ".join(result)
+
  
     
 @app.route("/text_process", methods=['POST'])
@@ -90,20 +101,15 @@ def text_process():
   else:
      return "Invalid Parameters"
 
-  text = content['text']
   mode = content['mode']
   
     
   result = '{}'
-  if mode=='sentence_segmenter':
-      result = sentence_segmenter(text)
-  elif mode=='word_tokenizer':
-      result = word_tokenizer(text)
-  elif mode=='pos_tagger':
-      result = pos_tagger(text)
-  elif mode=='text_process_pipeline':
+  if mode=='text_process_pipeline':
+      text = content['text']
       result = process_pipeline(text)
-        
+  elif mode== 'generate_quiz':
+      result = generate_quiz(content['word'], content['word_pos'], content['knowledge_level'], content['news_category'])
         
   return jsonify(result)
 
