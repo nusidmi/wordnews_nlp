@@ -78,12 +78,24 @@ def process_pipeline(text):
     return result
 
 
-def generate_quiz(word, word_pos, knowledge_level, news_category=any):
+@app.route("/generate_quiz", methods=['POST'])
+def generate_quiz():
+    if request.json is not None:
+      content = request.json
+    elif request.form is not None:
+      content = request.form
+    else:
+      return 'Invalid Parameters'
+
+    if 'word' not in content or 'word_pos' not in content or 'knowledge_level' not in content or 'news_category' not in content:
+       return 'Invalid Parameters'
+
     start = time.time()
-    result = generator.get_distractors(word, word_pos, knowledge_level, news_category)
+    result = generator.get_distractors(content['word'], content['word_pos'], 
+                                       content['knowledge_level'], content['news_category'])
     end = time.time()
     print (end-start)
-    return ", ".join(result)
+    return jsonify(result)
 
  
     
@@ -99,19 +111,15 @@ def text_process():
   elif request.form is not None:
     content = request.form
   else:
-     return "Invalid Parameters"
+     return 'Invalid Parameters'
 
-  mode = content['mode']
-  
+  if 'text' not in content:
+     return 'Invalid Parameters'
     
-  result = '{}'
-  if mode=='text_process_pipeline':
-      text = content['text']
-      result = process_pipeline(text)
-  elif mode== 'generate_quiz':
-      result = generate_quiz(content['word'], content['word_pos'], content['knowledge_level'], content['news_category'])
-        
+  result = process_pipeline(content['text'])
   return jsonify(result)
+
+
 
 if __name__ == "__main__":
     app.run()
