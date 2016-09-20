@@ -10,6 +10,9 @@ from nltk.corpus import wordnet_ic
 
 class WordDistance(object):
 
+    def __init__(self):
+        self.brown_ic = wordnet_ic.ic('ic-brown.dat')
+
     def get_distance(self, word1, word2):   
 
         max_frequent = 0
@@ -34,7 +37,7 @@ class WordDistance(object):
         return wn.path_similarity(target1, target2)
 
     def get_lin_distance(self, word1, word2):
-        brown_ic = wordnet_ic.ic('ic-brown.dat')
+        #brown_ic = wordnet_ic.ic('ic-brown.dat')
         if len(wn.synsets(word1)) == 0 or len(wn.synsets(word2)) == 0:
             return 0
 
@@ -42,7 +45,7 @@ class WordDistance(object):
         target2 = wn.synsets(word2)[0]
 
         try:
-            result = target1.lin_similarity(target2, brown_ic)
+            result = target1.lin_similarity(target2, self.brown_ic)
             return result
         except:
             return 0

@@ -15,6 +15,7 @@ from quiz_generator import QuizGenerator
 
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 CORS(app)
 
 nltk.data.path.append('./nltk_data')
