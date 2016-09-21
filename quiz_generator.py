@@ -17,7 +17,7 @@ from WordNetStemmer import Stemmer
 nltk.data.path.append('./nltk_data')
 
 class QuizGenerator(object):
-    MIN_SIM = 0.1
+    MIN_SIM = 0.5
 
     def __init__(self):
         print 'init...'
@@ -106,6 +106,7 @@ class QuizGenerator(object):
     # news_category denotes the topic of the news, e.g., technology, finance, etc
     # knowledge level decides the difficulty of distractors
     def get_distractors(self, word, word_pos, knowledge_level, news_category):
+        knowledge_level = int(knowledge_level)
         print 'generating distractors...'
         if news_category in self.strong_dict:
             self.candidates = self.strong_dict[news_category][word_pos].keys()
@@ -174,7 +175,7 @@ class QuizGenerator(object):
 
     # If the candidate has the same pos tag as the word
     def is_same_form(self, word, word_pos, candidate):
-        return word!=candidate #&& (candidate in english_word_tags) && (word_pos in english_word_tags[candidate])
+        return word!=candidate and (candidate in english_word_tags) and (word_pos in english_word_tags[candidate])
 
 
 

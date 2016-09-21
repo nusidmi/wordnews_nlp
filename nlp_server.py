@@ -11,7 +11,8 @@ from nltk.tokenize import sent_tokenize
 from nltk import word_tokenize
 from nltk.tokenize.treebank import TreebankWordTokenizer
 
-from quiz_generator import QuizGenerator
+#from quiz_generator import QuizGenerator
+from quiz_generator_fast import QuizGeneratorFast
 
 
 app = Flask(__name__)
@@ -24,7 +25,9 @@ sentence_segmenter = nltk.data.load('tokenizers/punkt/english.pickle')
 word_tokenizer = TreebankWordTokenizer()
 pos_tagger = nltk.data.load(nltk.tag._POS_TAGGER)
 
-generator = QuizGenerator()
+#generator = QuizGenerator()
+generator = QuizGeneratorFast()
+
 
 
 
