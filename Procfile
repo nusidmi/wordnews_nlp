@@ -1,1 +1,1 @@
-web: gunicorn nlp_server:app --log-file -
+web: gunicorn --workers=5 --log-level=DEBUG nlp_server:app --log-file -
