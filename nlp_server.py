@@ -29,8 +29,6 @@ pos_tagger = nltk.data.load(nltk.tag._POS_TAGGER)
 generator = QuizGeneratorFast()
 
 
-
-
 @app.route("/")
 def index():
     print 'index'
@@ -55,6 +53,7 @@ def pos_tag(text):
     tokenized_text = word_tokenizer.tokenize(text)
     word_tags = pos_tagger(tokenized_text)
     return word_tags
+
 
 def process_pipeline(text):
     start = time.time()
@@ -82,6 +81,33 @@ def process_pipeline(text):
     return result
 
 
+def process_pipeline_batch(text):
+    start = time.time()
+    result = []
+    
+    sentences = sentence_segmenter.tokenize(text)
+    tokenized_text = word_tokenizer.tokenize_sents(sentences)
+    word_tag_lists = pos_tagger.tag_sents(tokenized_text)
+
+    for index, word_tag_list in enumerate(word_tag_lists):
+      words = []
+      tags = []
+      for word, tag in word_tag_list:
+          words.append(word)
+          tags.append(tag)
+
+      rst_sent = {}
+      rst_sent['sent'] = sentences[index]
+      rst_sent['words'] = ' '.join(words)
+      rst_sent['tags'] = ' '.join(tags)
+      result.append(rst_sent)
+
+    end = time.time()
+    print (end-start)
+    return result
+
+
+
 @app.route("/generate_quiz", methods=['POST'])
 def generate_quiz():
     if request.json is not None:
@@ -104,7 +130,6 @@ def generate_quiz():
  
     
 @app.route("/text_process", methods=['POST'])
-#@cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def text_process():
   # for get
   #text = request.args.get('text', '')
@@ -121,6 +146,26 @@ def text_process():
      return 'Invalid Parameters'
     
   result = process_pipeline(content['text'])
+  return jsonify(result)
+
+
+@app.route("/text_process_batch", methods=['POST'])
+def text_process_batch():
+  # for get
+  #text = request.args.get('text', '')
+  #mode = request.args.get('mode', '')
+
+  if request.json is not None:
+    content = request.json
+  elif request.form is not None:
+    content = request.form
+  else:
+     return 'Invalid Parameters'
+
+  if 'text' not in content:
+     return 'Invalid Parameters'
+    
+  result = process_pipeline_batch(content['text'])
   return jsonify(result)
 
 
