@@ -109,16 +109,17 @@ class QuizGeneratorFast(object):
 
     # distractor can be either chinese or english
     # news_category denotes the topic of the news, e.g., technology, finance, etc
-    # knowledge level decides the difficulty of distractors
-    def get_distractors(self, word, word_pos, knowledge_level, news_category):
-        knowledge_level = int(knowledge_level)
+    # test_type decides the langauge of distractors
+    def get_distractors(self, word, word_pos, test_type, news_category):
+        test_type = int(test_type)
         print 'generating distractors...'
 
         if word not in self.similar_words:
+            print 'not'
             return []
-        if knowledge_level<=2:
+        if test_type<=1:
             return self.get_hard_distractors(word, word_pos, 'english')
-        elif knowledge_level>=3:
+        elif test_type>=2:
             return self.get_hard_distractors(word, word_pos, 'chinese')
         else:
             return []
@@ -152,12 +153,12 @@ class QuizGeneratorFast(object):
         return word!=candidate and (candidate in self.english_word_tags) and (word_pos in self.english_word_tags[candidate])
 
 
-
+# TODO: fix this
 if __name__ == "__main__":
     print 'start...'
     #try: 
     generator = QuizGeneratorFast()
-    result = generator.get_distractors(word='test', word_pos='NN', knowledge_level=3, news_category=any)
+    result = generator.get_distractors(word='test', word_pos='NN', test_type=2, news_category=any)
     #except Exception as e:
     #    print "Error in QuizGenerator!"
     #    print e

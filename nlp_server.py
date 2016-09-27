@@ -91,12 +91,12 @@ def generate_quiz():
     else:
       return 'Invalid Parameters'
 
-    if 'word' not in content or 'word_pos' not in content or 'knowledge_level' not in content or 'news_category' not in content:
+    if 'word' not in content or 'word_pos' not in content or 'test_type' not in content or 'news_category' not in content:
        return 'Invalid Parameters'
 
     start = time.time()
     result = generator.get_distractors(content['word'], content['word_pos'], 
-                                       content['knowledge_level'], content['news_category'])
+                                       content['test_type'], content['news_category'])
     end = time.time()
     print (end-start)
     return jsonify(result)
