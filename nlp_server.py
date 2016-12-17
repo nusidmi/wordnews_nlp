@@ -120,6 +120,9 @@ def generate_quiz():
     if 'word' not in content or 'word_pos' not in content or 'test_type' not in content or 'news_category' not in content:
        return 'Invalid Parameters'
 
+    print (content['word'])
+    print (content['word_translation'])
+
     start = time.time()
     result = generator.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'])
