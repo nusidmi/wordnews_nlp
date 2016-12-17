@@ -121,7 +121,7 @@ def generate_quiz():
        return 'Invalid Parameters'
 
     print (content['word'])
-    print (content['word_translation'])
+    print (content['word_translation'].encode('utf-8'))
 
     start = time.time()
     result = generator.get_distractors(content['word'], content['word_pos'], 
