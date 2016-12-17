@@ -104,7 +104,7 @@ class QuizGeneratorFast(object):
     # test_type decides the langauge of distractors
     def get_distractors(self, word, word_pos, test_type, news_category):
         test_type = int(test_type)
-        print 'generating distractors...'
+        # print 'generating distractors...'
 
         if word not in self.similar_words:
             print 'not'
@@ -133,8 +133,7 @@ class QuizGeneratorFast(object):
                     if distractor_lang=='chinese':
                         key = candidate +'-'+word_pos
                         if key in self.most_frequent_translation:
-                            print(key + ':')
-                            print(self.most_frequent_translation[key])
+                            print(key)
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         distractors_list.append(candidate)

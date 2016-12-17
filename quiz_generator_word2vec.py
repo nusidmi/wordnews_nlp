@@ -84,7 +84,7 @@ class QuizGeneratorW2V(object):
     # test_type decides the langauge of distractors
     def get_distractors(self, word, word_pos, test_type, news_category, word_translation):
         test_type = int(test_type)
-        print 'generating distractors...'
+        # print 'generating distractors...'
 
         if word not in self.model:
             print 'word ' + word + ' is out of dictionary'
@@ -120,8 +120,7 @@ class QuizGeneratorW2V(object):
                         if type(self.most_frequent_translation[key]) != type(word_translation):
                             print("different types")
                         if self.most_frequent_translation[key] != word_translation:
-                            print(key + ':')
-                            print(self.most_frequent_translation[key])
+                            print(key)
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         # print "no translation for " + key

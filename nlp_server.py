@@ -133,8 +133,7 @@ def generate_quiz():
     end = time.time()
     print "time spent: " + str(end-start)
     print(", ".join(result))
-    print("\n")
-
+    print("")
     print("w2v")
     print("---")
     start = time.time()
@@ -145,7 +144,7 @@ def generate_quiz():
     end = time.time()
     print "time spent: " + str(end-start)
     print(", ".join(result_w2v))
-    print("\n")
+    print("")
     return jsonify(result)
 
  
