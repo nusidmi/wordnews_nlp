@@ -133,7 +133,8 @@ class QuizGeneratorFast(object):
                     if distractor_lang=='chinese':
                         key = candidate +'-'+word_pos
                         if key in self.most_frequent_translation:
-                            print(key + ':' + self.most_frequent_translation[key].decode('utf-8'))
+                            print(key + ':')
+                            print(self.most_frequent_translation[key])
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         distractors_list.append(candidate)
@@ -157,8 +158,13 @@ class QuizGeneratorFast(object):
 if __name__ == "__main__":
     print 'start...'
     #try: 
+    
+    word = 'key'
+    word_pos = 'JJ'
+    key = word +'-'+word_pos
+
     generator = QuizGeneratorFast()
-    result = generator.get_distractors(word='test', word_pos='NN', test_type=2, news_category=any)
+    result = generator.get_distractors(word=word, word_pos=word_pos, test_type=2, news_category=any)
     #except Exception as e:
     #    print "Error in QuizGenerator!"
     #    print e

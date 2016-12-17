@@ -120,7 +120,8 @@ class QuizGeneratorW2V(object):
                         if type(self.most_frequent_translation[key]) != type(word_translation):
                             print("different types")
                         if self.most_frequent_translation[key] != word_translation:
-                            print(key + ':' + self.most_frequent_translation[key].decode('utf-8'))
+                            print(key + ':')
+                            print(self.most_frequent_translation[key])
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         # print "no translation for " + key
