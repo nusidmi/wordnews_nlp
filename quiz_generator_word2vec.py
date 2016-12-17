@@ -104,7 +104,7 @@ class QuizGeneratorW2V(object):
         candidates = self.generate_similar_words(word)
         # print(candidates)
         no_of_candidates = len(candidates)
-
+        keys = []
         n = 0
         while len(distractors_list) < 3 and n < no_of_candidates:
 
@@ -120,7 +120,7 @@ class QuizGeneratorW2V(object):
                         if type(self.most_frequent_translation[key]) != type(word_translation):
                             print("different types")
                         if self.most_frequent_translation[key] != word_translation:
-                            print(key)
+                            keys.append(key)
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         # print "no translation for " + key
@@ -132,7 +132,7 @@ class QuizGeneratorW2V(object):
         if len(distractors_list) < 3:
             print("no enough valid distractors")
             return []
-
+        print(", ".join(keys))
         return distractors_list
 
     # If the candidate has the same pos tag as the word

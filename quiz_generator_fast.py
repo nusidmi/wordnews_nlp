@@ -123,7 +123,7 @@ class QuizGeneratorFast(object):
         nums = set()
         candidate_count = len(self.similar_words[word])
         candidates = list(self.similar_words[word])
-
+        keys = []
         while len(distractors_list)<3 and len(candidates)>0:
             n = random.randint(0, candidate_count-1)
 
@@ -133,7 +133,7 @@ class QuizGeneratorFast(object):
                     if distractor_lang=='chinese':
                         key = candidate +'-'+word_pos
                         if key in self.most_frequent_translation:
-                            print(key)
+                            keys.append(key)
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         distractors_list.append(candidate)
@@ -143,8 +143,9 @@ class QuizGeneratorFast(object):
                 candidate_count = len(candidates)
 
         if len(distractors_list) < 3:
+            print("no enough valid distractors")
             return []
-
+        print(", ".join(keys))
         return distractors_list
 
 

@@ -142,7 +142,7 @@ def generate_quiz():
     print "time spent: " + str(end-start)
     print(", ".join(result_w2v))
     print("   ")
-    return jsonify(result)
+    return jsonify(result_w2v)
 
  
     
