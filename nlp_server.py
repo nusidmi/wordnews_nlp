@@ -122,20 +122,17 @@ def generate_quiz():
     if 'word' not in content or 'word_pos' not in content or 'test_type' not in content or 'news_category' not in content:
        return 'Invalid Parameters'
 
-    print(content['word'])
+    print('==' + content['word'] + '==')
     print(content['word_translation'].encode('utf-8'))
 
-    print("lin distance")
-    print("------------")
+    print("--lin distance--")
     start = time.time()
     result = generator.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'])
     end = time.time()
     print "time spent: " + str(end-start)
     print(", ".join(result))
-    print("")
-    print("w2v")
-    print("---")
+    print("--w2v--")
     start = time.time()
     result_w2v = generator_w2v.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'],
@@ -144,7 +141,7 @@ def generate_quiz():
     end = time.time()
     print "time spent: " + str(end-start)
     print(", ".join(result_w2v))
-    print("")
+    print("   ")
     return jsonify(result)
 
  
