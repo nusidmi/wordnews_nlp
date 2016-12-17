@@ -140,7 +140,7 @@ def generate_quiz():
     start = time.time()
     result_w2v = generator_w2v.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'],
-                                       content['word_translation'])
+                                       content['word_translation'].encode('utf-8'))
 
     end = time.time()
     print "time spent: " + str(end-start)

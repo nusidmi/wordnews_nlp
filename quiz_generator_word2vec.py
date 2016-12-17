@@ -71,7 +71,7 @@ class QuizGeneratorW2V(object):
         similar_words = []
         # print(word)
         if word in self.model:
-            indexes, metrics = self.model.cosine(word, n=20) # n is number of similar words to retrieve
+            indexes, metrics = self.model.cosine(word, n=50) # n is number of similar words to retrieve
             similar_words = self.model.generate_response(indexes, metrics).tolist()
         else:
             print('out of dict')
@@ -117,7 +117,14 @@ class QuizGeneratorW2V(object):
                     key = candidate_word +'-'+word_pos
                     if key in self.most_frequent_translation:
                         # print "found translation for " + key
-                        distractors_list.append(self.most_frequent_translation[key])
+                        print(self.most_frequent_translation[key])
+                        print(type(self.most_frequent_translation[key]))
+                        print(word_translation)
+                        print(type(word_translation))
+                        if type(self.most_frequent_translation[key]) != type(word_translation):
+                            print("different types")
+                        if self.most_frequent_translation[key] != word_translation:
+                            distractors_list.append(self.most_frequent_translation[key])
                     else:
                         # print "no translation for " + key
                         pass
@@ -126,6 +133,7 @@ class QuizGeneratorW2V(object):
             n += 1
 
         if len(distractors_list) < 3:
+            print("no enough valid distractors")
             return []
 
         return distractors_list
@@ -144,8 +152,8 @@ class QuizGeneratorW2V(object):
 if __name__ == "__main__":
     print 'start...'
     #try: 
-    word = 'test'
-    word_pos = 'NN'
+    word = 'key'
+    word_pos = 'JJ'
     key = word +'-'+word_pos
     
     generator = QuizGeneratorW2V()
