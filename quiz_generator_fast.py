@@ -13,14 +13,6 @@ class QuizGeneratorFast(object):
     
         try:
             print 'loading word category...'
-            with open('./quiz_data/news_data4.txt', 'r') as file1, open('./quiz_data/strongwords.txt', 'r') as file2:
-                raw_super_dict = pickle.load(file1) # {category: {pos_tag: {word, freq}}}
-                raw_strong_dict = pickle.load(file2)
-
-            self.super_dict = raw_super_dict
-            self.strong_dict = raw_strong_dict
-            self.all_english_distractors = self.convert_dict_without_category(self.super_dict)
-
 
             self.english_word_tags, self.chinese_word_tags, self.most_frequent_translation = self.load_word_tags('./quiz_data/english_chinese_translations.csv')
             self.similar_words = self.load_similar_word('./quiz_data/word_lin_distance.txt')
