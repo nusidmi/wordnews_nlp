@@ -138,7 +138,6 @@ class QuizGeneratorFast(object):
             if n not in nums:
                 candidate = candidates[n]
                 if self.is_same_form(word, word_pos, candidate):
-                    print candidate
                     if distractor_lang=='chinese':
                         key = candidate +'-'+word_pos
                         if key in self.most_frequent_translation:
