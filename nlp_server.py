@@ -25,8 +25,9 @@ sentence_segmenter = nltk.data.load('tokenizers/punkt/english.pickle')
 word_tokenizer = TreebankWordTokenizer()
 pos_tagger = nltk.data.load(nltk.tag._POS_TAGGER)
 
-#generator = QuizGenerator()
+# generator = QuizGenerator()
 generator = QuizGeneratorFast()
+generator_w2v = QuizGeneratorW2V()
 
 
 @app.route("/")
@@ -120,14 +121,30 @@ def generate_quiz():
     if 'word' not in content or 'word_pos' not in content or 'test_type' not in content or 'news_category' not in content:
        return 'Invalid Parameters'
 
-    print (content['word'])
-    print (content['word_translation'].encode('utf-8'))
+    print(content['word'])
+    print(content['word_translation'].encode('utf-8'))
 
+    print("lin distance")
+    print("------------")
     start = time.time()
     result = generator.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'])
     end = time.time()
-    print (end-start)
+    print "time spent: " + (end-start)
+    print(", ".join(result))
+    print("\n")
+
+    print("w2v")
+    print("---")
+    start = time.time()
+    result_w2v = generator_w2v.get_distractors(content['word'], content['word_pos'], 
+                                       content['test_type'], content['news_category'],
+                                       content['word_translation'])
+
+    end = time.time()
+    print "time spent: " + (end-start)
+    print(", ".join(result_w2v))
+    print("\n")
     return jsonify(result)
 
  
