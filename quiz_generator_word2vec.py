@@ -13,7 +13,8 @@ class QuizGeneratorW2V(object):
             self.english_word_tags, self.chinese_word_tags, self.most_frequent_translation = self.load_word_tags('./quiz_data/english_chinese_translations.csv')
             
             print 'loading word2vec...'
-            self.model = self.load_word2vec('./quiz_data/text8.bin')
+            # self.model = self.load_word2vec('./quiz_data/text8.bin')
+            self.model = self.load_word2vec('./quiz_data/text8_10.bin')
             
         except IOError as e:
             print "[Error in MCQGenerator: while opening files]"

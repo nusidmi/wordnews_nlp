@@ -131,7 +131,7 @@ def generate_quiz():
     result = generator.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'])
     end = time.time()
-    print "time spent: " + (end-start)
+    print "time spent: " + str(end-start)
     print(", ".join(result))
     print("\n")
 
@@ -143,7 +143,7 @@ def generate_quiz():
                                        content['word_translation'])
 
     end = time.time()
-    print "time spent: " + (end-start)
+    print "time spent: " + str(end-start)
     print(", ".join(result_w2v))
     print("\n")
     return jsonify(result)
