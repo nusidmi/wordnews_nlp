@@ -13,6 +13,7 @@ from nltk.tokenize.treebank import TreebankWordTokenizer
 
 #from quiz_generator import QuizGenerator
 from quiz_generator_fast import QuizGeneratorFast
+from quiz_generator_word2vec import QuizGeneratorW2V
 
 
 app = Flask(__name__)
