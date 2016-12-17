@@ -117,13 +117,10 @@ class QuizGeneratorW2V(object):
                     key = candidate_word +'-'+word_pos
                     if key in self.most_frequent_translation:
                         # print "found translation for " + key
-                        print(self.most_frequent_translation[key])
-                        print(type(self.most_frequent_translation[key]))
-                        print(word_translation)
-                        print(type(word_translation))
                         if type(self.most_frequent_translation[key]) != type(word_translation):
                             print("different types")
                         if self.most_frequent_translation[key] != word_translation:
+                            print(key + ':' + self.most_frequent_translation[key].decode('utf-8'))
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         # print "no translation for " + key

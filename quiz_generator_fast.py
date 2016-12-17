@@ -133,6 +133,7 @@ class QuizGeneratorFast(object):
                     if distractor_lang=='chinese':
                         key = candidate +'-'+word_pos
                         if key in self.most_frequent_translation:
+                            print(key + ':' + self.most_frequent_translation[key].decode('utf-8'))
                             distractors_list.append(self.most_frequent_translation[key])
                     else:
                         distractors_list.append(candidate)
