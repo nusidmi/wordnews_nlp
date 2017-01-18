@@ -8,29 +8,29 @@ class QuizGeneratorFast(object):
     MIN_SIM = 0.5
 
     def __init__(self):
-        print 'init...'
+        print('init...')
         self.tag_index = {1:'NN', 2:'VB', 4:'RB', 5:'JJ'}
     
         try:
-            print 'loading word category...'
+            print('loading word category...')
 
             self.english_word_tags, self.chinese_word_tags, self.most_frequent_translation = self.load_word_tags('./quiz_data/english_chinese_translations.csv')
             self.similar_words = self.load_similar_word('./quiz_data/word_lin_distance.txt')
             
         except IOError as e:
-            print "[Error in MCQGenerator: while opening files]"
+            print("[Error in MCQGenerator: while opening files]")
 
 
     # similar to convert_dict but remove category information
     def convert_dict_without_category(self, raw_dict):
         new_dict = dict()
-        for category, pos_tag_dict in raw_dict.iteritems():
-            for pos_tag, word_dict in pos_tag_dict.iteritems():
+        for category, pos_tag_dict in raw_dict.items():
+            for pos_tag, word_dict in pos_tag_dict.items():
                 if pos_tag not in new_dict:
                     new_dict[pos_tag] = []
-                for word, freq in word_dict.iteritems():
+                for word, freq in word_dict.items():
                     new_dict[pos_tag].append(word)
-        for pos_tag, words in new_dict.iteritems():
+        for pos_tag, words in new_dict.items():
             new_dict[pos_tag] = list(set(words))
         return new_dict
 
@@ -39,7 +39,7 @@ class QuizGeneratorFast(object):
     # Load the list of english, chinese words and their pos tags from 
     # the dump file of english_chinese_translations tables
     def load_word_tags(self, translation_file):
-        print 'loading ' + translation_file
+        print('loading ' + translation_file)
         english_word_tags = dict()
         chinese_word_tags = dict()
         most_frequent_translation = dict()
@@ -86,7 +86,7 @@ class QuizGeneratorFast(object):
                 line = line.strip()
                 if line!='':
                     w1, w2, sim = line.split(',')
-                    if sim>=QuizGeneratorFast.MIN_SIM:
+                    if float(sim)>=QuizGeneratorFast.MIN_SIM:
                         if w1 not in similar_words:
                             similar_words[w1] = []
                         if w2 not in similar_words:
@@ -107,7 +107,7 @@ class QuizGeneratorFast(object):
         # print 'generating distractors...'
 
         if word not in self.similar_words:
-            print 'not'
+            print('not')
             return []
         if test_type<=1:
             return self.get_hard_distractors(word, word_pos, 'english')
@@ -145,7 +145,7 @@ class QuizGeneratorFast(object):
         if len(distractors_list) < 3:
             print("no enough valid distractors")
             return []
-        print(", ".join(keys))
+        print((", ".join(keys)))
         return distractors_list
 
 
@@ -156,7 +156,7 @@ class QuizGeneratorFast(object):
 
 # TODO: fix this
 if __name__ == "__main__":
-    print 'start...'
+    print('start...')
     #try: 
     
     word = 'key'
@@ -169,4 +169,4 @@ if __name__ == "__main__":
     #    print "Error in QuizGenerator!"
     #    print e
     
-    print ", ".join(result)
+    print(", ".join(result))

@@ -1,0 +1,344 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading word2vec...
+vocab: 98331 dimension: 10
+vocab: 98331 dimension: 100
+vocab: 61894 dimension: 100
+vocab: 61894 dimension: 500
+
+
+
+
+The director of the US Office of Government Ethics has criticised Donald Trump 's plan to hand control of his business empire to his sons before his inauguration on 20 January .
+------
+director
+dimension: 10, cutoff: 5
+> interview, reporter, manager
+> 晤面, 记者, 经理
+> wu4mian4, ji4zhe3, jing1li3
+time spent: 0.038233041763305664
+dimension: 100, cutoff: 5
+> assistant, actor, editor
+> 助理, 演员, 编辑
+> zhu4li3, yan3yuan2, bian1ji2
+time spent: 0.13701581954956055
+dimension: 100, cutoff: 10
+> consultant, assistant, actor
+> 顾问, 助理, 演员
+> gu4wen4, zhu4li3, yan3yuan2
+time spent: 0.08679914474487305
+dimension: 500, cutoff: 10
+> assistant, consultant, editor
+> 助理, 顾问, 编辑
+> zhu4li3, gu4wen4, bian1ji2
+time spent: 0.19604706764221191
+------
+plan
+dimension: 10, cutoff: 5
+> office, decision, court
+> 办公室, 裁, 法庭
+> ban4gong1shi4, cai2, fa3ting2
+time spent: 0.009695053100585938
+dimension: 100, cutoff: 5
+> proposal, mission, decision
+> 建议, 任务, 裁
+> jian4yi4, ren4wu4, cai2
+time spent: 0.017522096633911133
+dimension: 100, cutoff: 10
+> proposal, mission, initiative
+> 建议, 任务, 倡议
+> jian4yi4, ren4wu4, chang4yi4
+time spent: 0.009569883346557617
+dimension: 500, cutoff: 10
+> proposal, mission, initiative
+> 建议, 任务, 倡议
+> jian4yi4, ren4wu4, chang4yi4
+time spent: 0.02469182014465332
+------
+hand
+dimension: 10, cutoff: 5
+> eye, kick, trick
+> 细看, 踢, 招
+> xi4kan4, ti1, zhao1
+time spent: 0.009489774703979492
+dimension: 100, cutoff: 5
+> bow, finger, rope
+> 鞠躬, 捻弄, 绠
+> ju1gong1, nian3nong4, geng3
+time spent: 0.016402006149291992
+dimension: 100, cutoff: 10
+> bow, finger, shoulder
+> 鞠躬, 捻弄, 承担
+> ju1gong1, nian3nong4, cheng2dan4
+time spent: 0.010135889053344727
+dimension: 500, cutoff: 10
+> bow, finger, shoulder
+> 鞠躬, 捻弄, 承担
+> ju1gong1, nian3nong4, cheng2dan4
+time spent: 0.021139144897460938
+------
+control
+dimension: 10, cutoff: 5
+> investment, acquisition, demand
+> 投资, 获得, 需求
+> tou2zi1, huo4de2, xu1qiu2
+time spent: 0.01010584831237793
+dimension: 100, cutoff: 5
+> guidance, power, command
+> 领导, 功率, 命令
+> ling3dao3, gong1lv4, ming4ling4
+time spent: 0.019387006759643555
+dimension: 100, cutoff: 10
+> power, guidance, command
+> 功率, 领导, 命令
+> gong1lv4, ling3dao3, ming4ling4
+time spent: 0.010100841522216797
+dimension: 500, cutoff: 10
+> power, guidance, command
+> 功率, 领导, 命令
+> gong1lv4, ling3dao3, ming4ling4
+time spent: 0.020964860916137695
+------
+business
+dimension: 10, cutoff: 5
+> training, private, management
+> 训练, 列兵, 管理
+> xun4lian4, lie4bing1, guan3li3
+time spent: 0.009711027145385742
+dimension: 100, cutoff: 5
+> consumer, ownership, private
+> 消费者, 所有权, 列兵
+> xiao1fei4zhe3, suo3you3quan2, lie4bing1
+time spent: 0.013809919357299805
+dimension: 100, cutoff: 10
+> consumer, management, private
+> 消费者, 管理, 列兵
+> xiao1fei4zhe3, guan3li3, lie4bing1
+time spent: 0.008804082870483398
+dimension: 500, cutoff: 10
+> consumer, management, investment
+> 消费者, 管理, 投资
+> xiao1fei4zhe3, guan3li3, tou2zi1
+time spent: 0.02182602882385254
+------
+empire
+dimension: 10, cutoff: 5
+> kingdom, conquest, settlement
+> 王国, 征服, 沉降
+> wang2guo2, zheng1fu2, chen2jiang4
+time spent: 0.009474039077758789
+dimension: 100, cutoff: 5
+> kingdom, conquest, ruler
+> 王国, 征服, 统治者
+> wang2guo2, zheng1fu2, tong3zhi4zhe3
+time spent: 0.013693809509277344
+dimension: 100, cutoff: 10
+> kingdom, conquest, ruler
+> 王国, 征服, 统治者
+> wang2guo2, zheng1fu2, tong3zhi4zhe3
+time spent: 0.008783102035522461
+dimension: 500, cutoff: 10
+> kingdom, conquest, ruler
+> 王国, 征服, 统治者
+> wang2guo2, zheng1fu2, tong3zhi4zhe3
+time spent: 0.021826982498168945
+------
+`` Every president in modern times has taken the strong medicine of divestiture , '' he said , referring to a process whereby Mr Trump would sell off his corporate assets and put the profits into a blind trust run by an independent trustee .
+------
+president
+dimension: 10, cutoff: 5
+> member, secretary, cabinet
+> 会员, 秘书, 柜
+> hui4yuan2, mi4shu1, gui4
+time spent: 0.011749029159545898
+dimension: 100, cutoff: 5
+> governor, secretary, minister
+> 管理者, 秘书, 部长
+> guan3li3zhe3, mi4shu1, bu4chang2
+time spent: 0.014053106307983398
+dimension: 100, cutoff: 10
+> governor, secretary, deputy
+> 管理者, 秘书, 副
+> guan3li3zhe3, mi4shu1, fu4
+time spent: 0.008836030960083008
+dimension: 500, cutoff: 10
+> governor, secretary, minister
+> 管理者, 秘书, 部长
+> guan3li3zhe3, mi4shu1, bu4chang2
+time spent: 0.021111011505126953
+------
+modern
+dimension: 10, cutoff: 5
+> historical, classical, dominant
+> 历史的, 古典, 优势
+> li4shi3de5, gu3dian3, you1shi4
+time spent: 0.009656906127929688
+dimension: 100, cutoff: 5
+> classical, contemporary, primitive
+> 古典, 同时, 原始
+> gu3dian3, tong2shi2, yuan2shi3
+time spent: 0.01635003089904785
+dimension: 100, cutoff: 10
+> classical, contemporary, primitive
+> 古典, 同时, 原始
+> gu3dian3, tong2shi2, yuan2shi3
+time spent: 0.010110855102539062
+dimension: 500, cutoff: 10
+> classical, contemporary, primitive
+> 古典, 同时, 原始
+> gu3dian3, tong2shi2, yuan2shi3
+time spent: 0.023413896560668945
+------
+strong
+dimension: 10, cutoff: 5
+> individual, intense, valuable
+> 个人, 激烈, 宝贵
+> ge4ren2, ji1lie4, bao3gui4
+time spent: 0.00956583023071289
+dimension: 100, cutoff: 5
+> weak, broad, considerable
+> 弱, 广阔, 可观
+> ruo4, guang3kuo4, ke3guan1
+time spent: 0.01458597183227539
+dimension: 100, cutoff: 10
+> weak, broad, considerable
+> 弱, 广阔, 可观
+> ruo4, guang3kuo4, ke3guan1
+time spent: 0.008864164352416992
+dimension: 500, cutoff: 10
+> weak, broad, considerable
+> 弱, 广阔, 可观
+> ruo4, guang3kuo4, ke3guan1
+time spent: 0.021750926971435547
+------
+medicine
+dimension: 10, cutoff: 5
+> biology, science, chemistry
+> 生物学, 科学, 化学
+> sheng1wu4xue2, ke1xue2, hua4xue2
+time spent: 0.010190010070800781
+dimension: 100, cutoff: 5
+> chemistry, biology, medical
+> 化学, 生物学, 医生
+> hua4xue2, sheng1wu4xue2, yi4sheng1
+time spent: 0.01406097412109375
+dimension: 100, cutoff: 10
+> chemistry, medical, biology
+> 化学, 医生, 生物学
+> hua4xue2, yi4sheng1, sheng1wu4xue2
+time spent: 0.0086669921875
+dimension: 500, cutoff: 10
+> chemistry, medical, biology
+> 化学, 医生, 生物学
+> hua4xue2, yi4sheng1, sheng1wu4xue2
+time spent: 0.020752906799316406
+------
+process
+dimension: 10, cutoff: 5
+> procedure, mechanism, measure
+> 程序, 机制, 措施
+> cheng2xu4, ji1zhi4, cuo4shi1
+time spent: 0.010397195816040039
+dimension: 100, cutoff: 5
+> mechanism, procedure, method
+> 机制, 程序, 方法
+> ji1zhi4, cheng2xu4, fang1fa3
+time spent: 0.01657700538635254
+dimension: 100, cutoff: 10
+> mechanism, procedure, method
+> 机制, 程序, 方法
+> ji1zhi4, cheng2xu4, fang1fa3
+time spent: 0.009708166122436523
+dimension: 500, cutoff: 10
+> mechanism, procedure, method
+> 机制, 程序, 方法
+> ji1zhi4, cheng2xu4, fang1fa3
+time spent: 0.02311086654663086
+------
+sell
+dimension: 10, cutoff: 5
+> buy, collect, manage
+> 买, 收集, 管理
+> mai3, shou1ji2, guan3li3
+time spent: 0.010054826736450195
+dimension: 100, cutoff: 5
+> buy, collect, invest
+> 买, 收集, 投资
+> mai3, shou1ji2, tou2zi1
+time spent: 0.0143280029296875
+dimension: 100, cutoff: 10
+> buy, distribute, invest
+> 买, 分发, 投资
+> mai3, fen1fa1, tou2zi1
+time spent: 0.008886098861694336
+dimension: 500, cutoff: 10
+> buy, distribute, invest
+> 买, 分发, 投资
+> mai3, fen1fa1, tou2zi1
+time spent: 0.02062392234802246
+------
+blind
+dimension: 10, cutoff: 5
+> brilliant, ugly, wicked
+> 辉煌, 丑陋, 邪恶
+> hui1huang2, chou3lou4, xie2e4
+time spent: 0.00954294204711914
+dimension: 100, cutoff: 5
+> deaf, silly, dumb
+> 聋, 愚蠢, 哑
+> long2, yu2chun3, ya3
+time spent: 0.015717029571533203
+dimension: 100, cutoff: 10
+> deaf, silly, dumb
+> 聋, 愚蠢, 哑
+> long2, yu2chun3, ya3
+time spent: 0.00896310806274414
+dimension: 500, cutoff: 10
+> deaf, dumb, silly
+> 聋, 哑, 愚蠢
+> long2, ya3, yu2chun3
+time spent: 0.02092885971069336
+------
+trust
+dimension: 10, cutoff: 5
+> worker, liberty, charity
+> 工人, 自由, 慈善机构
+> gong1ren2, zi4you2, ci2shan4ji1gou1
+time spent: 0.010999917984008789
+dimension: 100, cutoff: 5
+> liberty, welfare, grant
+> 自由, 福利, 诰
+> zi4you2, fu2li4, gao4
+time spent: 0.01358485221862793
+dimension: 100, cutoff: 10
+> grant, guarantee, welfare
+> 诰, 保证书, 福利
+> gao4, bao3zheng4shu1, fu2li4
+time spent: 0.00952291488647461
+dimension: 500, cutoff: 10
+> grant, guarantee, welfare
+> 诰, 保证书, 福利
+> gao4, bao3zheng4shu1, fu2li4
+time spent: 0.021402835845947266
+------
+independent
+dimension: 10, cutoff: 5
+> no enough valid distractors
+time spent: 0.009428977966308594
+dimension: 100, cutoff: 5
+> active, democratic, separate
+> 活性, 民主的, 个别的
+> huo2xing4, min2zhu3de5, ge4bie2de5
+time spent: 0.014871835708618164
+dimension: 100, cutoff: 10
+> democratic, active, official
+> 民主的, 活性, 官方
+> min2zhu3de5, huo2xing4, guan1fang1
+time spent: 0.009299993515014648
+dimension: 500, cutoff: 10
+> democratic, active, official
+> 民主的, 活性, 官方
+> min2zhu3de5, huo2xing4, guan1fang1
+time spent: 0.022352933883666992
+------

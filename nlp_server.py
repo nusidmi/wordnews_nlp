@@ -11,7 +11,7 @@ from nltk.tokenize import sent_tokenize
 from nltk import word_tokenize
 from nltk.tokenize.treebank import TreebankWordTokenizer
 
-#from quiz_generator import QuizGenerator
+# from quiz_generator import QuizGenerator
 from quiz_generator_fast import QuizGeneratorFast
 from quiz_generator_word2vec import QuizGeneratorW2V
 
@@ -27,14 +27,14 @@ word_tokenizer = TreebankWordTokenizer()
 pos_tagger = nltk.data.load(nltk.tag._POS_TAGGER)
 
 # generator = QuizGenerator()
-generator = QuizGeneratorFast()
+# generator = QuizGeneratorFast()
 generator_w2v = QuizGeneratorW2V()
 
 
 @app.route("/")
 def index():
-    print 'index'
-    print request
+    print('index')
+    print(request)
     return "index!"
     
     
@@ -79,7 +79,7 @@ def process_pipeline(text):
         result.append(rst_sent)
     
     end = time.time()
-    print (end-start)
+    # print((end-start))
     return result
 
 
@@ -105,7 +105,7 @@ def process_pipeline_batch(text):
       result.append(rst_sent)
 
     end = time.time()
-    print (end-start)
+    # print((end-start))
     return result
 
 
@@ -122,16 +122,16 @@ def generate_quiz():
     if 'word' not in content or 'word_pos' not in content or 'test_type' not in content or 'news_category' not in content:
        return 'Invalid Parameters'
 
-    print('==' + content['word'] + '==')
-    print(content['word_translation'].encode('utf-8'))
+    print(('==' + content['word'] + '=='))
+    print((content['word_translation'].encode('utf-8')))
 
     print("--lin distance--")
     start = time.time()
     result = generator.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'])
     end = time.time()
-    print "time spent: " + str(end-start)
-    print(", ".join(result))
+    print("time spent: " + str(end-start))
+    print((", ".join(result)))
     print("--w2v--")
     start = time.time()
     result_w2v = generator_w2v.get_distractors(content['word'], content['word_pos'], 
@@ -139,8 +139,8 @@ def generate_quiz():
                                        content['word_translation'].encode('utf-8'))
 
     end = time.time()
-    print "time spent: " + str(end-start)
-    print(", ".join(result_w2v))
+    print("time spent: " + str(end-start))
+    print((", ".join(result_w2v)))
     print("   ")
     return jsonify(result_w2v)
 

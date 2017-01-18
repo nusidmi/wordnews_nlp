@@ -2,27 +2,38 @@
 # -*- coding: utf-8 -*-
 
 import word2vec
+import pinyin
 
 class QuizGeneratorW2V(object):
     def __init__(self):
-        print 'init...'
+        print('init...')
         self.tag_index = {1:'NN', 2:'VB', 4:'RB', 5:'JJ'}
     
         try:
-            print 'loading translation...'
+            print('loading translation...')
             self.english_word_tags, self.chinese_word_tags, self.most_frequent_translation = self.load_word_tags('./quiz_data/english_chinese_translations.csv')
             
-            print 'loading word2vec...'
+            print('loading word2vec...')
+            self.models = {}
+            # dimension, frequency cutoff
+            test_params = [[10, 5], [100, 5], [100, 10], [500, 10]]
+            for test_param in test_params:
+                model_key = self.get_model_key(test_param[0], test_param[1])
+                self.models[model_key] = self.load_word2vec('./quiz_data/text8_{0}.bin'.format(model_key))
             # self.model = self.load_word2vec('./quiz_data/text8.bin')
-            self.model = self.load_word2vec('./quiz_data/text8_10.bin')
+            # self.model = self.load_word2vec('./quiz_data/text8_10.bin')
+            # self.model = self.load_word2vec('./quiz_data/text8_500_min_10.bin')
             
         except IOError as e:
-            print "[Error in MCQGenerator: while opening files]"
+            print("[Error in MCQGenerator: while opening files]")
+
+    def get_model_key(self, dimension, cutoff):
+        return str(dimension) + '_' + str(cutoff)
 
     # Load the list of english, chinese words and their pos tags from 
     # the dump file of english_chinese_translations tables
     def load_word_tags(self, translation_file):
-        print 'loading ' + translation_file
+        print('loading ' + translation_file)
         english_word_tags = dict()
         chinese_word_tags = dict()
         most_frequent_translation = dict()
@@ -64,6 +75,7 @@ class QuizGeneratorW2V(object):
 
     def load_word2vec(self, word2vec_binary):
         model = word2vec.load(word2vec_binary)
+        print("vocab: {0} dimension: {1}".format(model.vectors.shape[0], model.vectors.shape[1]))
         return model
 
     def generate_similar_words(self, word):
@@ -82,12 +94,13 @@ class QuizGeneratorW2V(object):
     # distractor can be either chinese or english
     # news_category denotes the topic of the news, e.g., technology, finance, etc
     # test_type decides the langauge of distractors
-    def get_distractors(self, word, word_pos, test_type, news_category, word_translation):
+    def get_distractors(self, word, word_pos, test_type, news_category, word_translation, dimension=10, cutoff=5):
         test_type = int(test_type)
+        model_key = self.get_model_key(dimension, cutoff)
+        self.model = self.models[model_key]
         # print 'generating distractors...'
-
         if word not in self.model:
-            print 'word ' + word + ' is out of dictionary'
+            print('word ' + word + ' is out of dictionary')
             return []
         if test_type<=1:
             return self.get_hard_distractors(word, word_pos, 'english', word_translation)
@@ -130,9 +143,11 @@ class QuizGeneratorW2V(object):
             n += 1
 
         if len(distractors_list) < 3:
-            print("no enough valid distractors")
+            print("> no enough valid distractors")
             return []
-        print(", ".join(keys))
+        print("> " + ", ".join(map(lambda x: x.split('-')[0], keys)))
+        print("> " + ", ".join(distractors_list))
+        print("> " + ", ".join(map(lambda x: pinyin.get(x, format="numerical"), distractors_list)))
         return distractors_list
 
     # If the candidate has the same pos tag as the word
@@ -147,7 +162,7 @@ class QuizGeneratorW2V(object):
         return word!=candidate and (candidate in self.english_word_tags) and (word_pos in self.english_word_tags[candidate])
 
 if __name__ == "__main__":
-    print 'start...'
+    print('start...')
     #try: 
     word = 'key'
     word_pos = 'JJ'
@@ -159,4 +174,4 @@ if __name__ == "__main__":
     #    print "Error in QuizGenerator!"
     #    print e
     
-    print ", ".join(result)
+    print(", ".join(result))

@@ -6,3 +6,4 @@ Flask-Cors==3.0.2
 numpy==1.10.4
 cython
 word2vec
+pinyin
