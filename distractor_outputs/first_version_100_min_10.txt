@@ -1,0 +1,69 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading word2vec...
+vocab: 61894 dimension: 100
+
+
+
+
+director
+> consultant, assistant, actor
+> 顾问, 助理, 演员
+------
+plan
+> proposal, mission, initiative
+> 建议, 任务, 倡议
+------
+hand
+> bow, finger, shoulder
+> 鞠躬, 捻弄, 承担
+------
+control
+> power, guidance, command
+> 功率, 领导, 命令
+------
+business
+> consumer, management, private
+> 消费者, 管理, 列兵
+------
+empire
+> kingdom, conquest, ruler
+> 王国, 征服, 统治者
+------
+president
+> governor, secretary, deputy
+> 管理者, 秘书, 副
+------
+modern
+> classical, contemporary, primitive
+> 古典, 同时, 原始
+------
+strong
+> weak, broad, considerable
+> 弱, 广阔, 可观
+------
+medicine
+> chemistry, medical, biology
+> 化学, 医生, 生物学
+------
+process
+> mechanism, procedure, method
+> 机制, 程序, 方法
+------
+sell
+> buy, distribute, invest
+> 买, 分发, 投资
+------
+blind
+> deaf, silly, dumb
+> 聋, 愚蠢, 哑
+------
+trust
+> grant, guarantee, welfare
+> 诰, 保证书, 福利
+------
+independent
+> democratic, active, official
+> 民主的, 活性, 官方
+------

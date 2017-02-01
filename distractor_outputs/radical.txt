@@ -1,0 +1,314 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading chinese dict
+loading word2vec...
+vocab: 61894 dimension: 500
+
+
+
+
+The director of the US Office of Government Ethics has criticised Donald Trump 's plan to hand control of his business empire to his sons before his inauguration on 20 January .
+------
+[('菊', '争'), ('苲', '了'), ('茵', '予'), ('萎', '事'), ('荥', '亅')]
+director
+董事 dong3shi4
+word2vec:
+> assistant, consultant, editor
+> 助理 zhu4li3, 顾问 gu4wen4, 编辑 bian1ji2
+
+sound similarity 0:
+> 懂事 dong3shi4
+sound similarity 0 ignore tone:
+> 懂事 dong3shi4
+sound similarity 1:
+> 永世 yong3shi4, 总是 zong3shi4, 顶事 ding3shi4
+sound similarity 2:
+> 当事 dang1shi4, 往事 wang3shi4, 同事 tong2shi4
+radical:
+> 菊争 ju2zheng1, 苲了 zha3le5, 茵予 yin1yu2, 萎事 wei1shi4, 荥亅 ying2jue2
+time spent: 2.2626888751983643
+------
+
+[('谏', '刻'), ('详', '刹'), ('谎', '剡'), ('谨', '前'), ('诚', '剮')]
+plan
+计划 ji4hua2
+word2vec:
+> proposal, mission, initiative
+> 建议 jian4yi4, 任务 ren4wu4, 倡议 chang4yi4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 计画 ji4hua4
+sound similarity 1:
+> 计画 ji4hua4
+sound similarity 2:
+> 寄存 ji4cun2, 屁话 pi4hua4, 记挂 ji4gua4
+radical:
+> 谏刻 jian4ke4, 详刹 xiang2cha4, 谎剡 huang3yan3, 谨前 jin3qian2, 诚剮 cheng2gua3
+time spent: 1.8070189952850342
+------
+
+[('遂', '亨'), ('边', '亢'), ('进', '亮'), ('迦', '京'), ('迎', '亠')]
+hand
+递交 di4jiao1
+word2vec:
+> bow, finger, shoulder
+> 鞠躬 ju1gong1, 捻弄 nian3nong4, 承担 cheng2dan4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 外交 wai4jiao1, 地基 di4ji1, 移交 yi2jiao1
+radical:
+> 遂亨 sui4heng1, 边亢 bian1kang4, 进亮 jin4liang4, 迦京 jia1jing1, 迎亠 ying2tou2
+time spent: 1.9127521514892578
+------
+
+[('簣', '刻'), ('簟', '刹'), ('篩', '剡'), ('籁', '前'), ('符', '剮')]
+control
+管制 guan3zhi4
+word2vec:
+> power, guidance, command
+> 功率 gong1lv4, 领导 ling3dao3, 命令 ming4ling4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 关注 guan1zhu4, 灌注 guan4zhu4, 贯注 guan4zhu4
+radical:
+> 簣刻 kui4ke4, 簟刹 dian4cha4, 篩剡 shai1yan3, 籁前 lai4qian2, 符剮 fu2gua3
+time spent: 1.931731939315796
+------
+
+[('叻', '丙'), ('呈', '万'), ('啉', '三'), ('嚕', '丕'), ('嚼', '丛')]
+business
+商业 shang1ye4
+word2vec:
+> consumer, management, investment
+> 消费者 xiao1fei4zhe3, 管理 guan3li3, 投资 tou2zi1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 商议 shang1yi4
+sound similarity 2:
+> 生意 sheng1yi4, 生育 sheng1yu4, 声誉 sheng1yu4
+radical:
+> 叻丙 le4bing3, 呈万 cheng2wan4, 啉三 lan2san1, 嚕丕 lu1pi1, 嚼丛 jiao2cong2
+time spent: 1.9318499565124512
+------
+
+[('帅', '圆'), ('帏', '囗'), ('幌', '团'), ('幗', '囿'), ('巾', '圃')]
+empire
+帝国 di4guo2
+word2vec:
+> kingdom, conquest, ruler
+> 王国 wang2guo2, 征服 zheng1fu2, 统治者 tong3zhi4zhe3
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 大国 da4guo2
+sound similarity 2:
+> 对过 dui4guo4, 渡过 du4guo4
+radical:
+> 帅圆 shuai4yuan2, 帏囗 wei2wei2, 幌团 huang3tuan2, 幗囿 guo2you4, 巾圃 jin1pu3
+time spent: 1.7672791481018066
+------
+
+`` Every president in modern times has taken the strong medicine of divestiture , '' he said , referring to a process whereby Mr Trump would sell off his corporate assets and put the profits into a blind trust run by an independent trustee .
+------
+[('丸', '帅'), ('丶', '帏'), ('丹', '幌'), ('主', '幗'), ('为', '巾')]
+president
+主席 zhu3xi2
+word2vec:
+> governor, secretary, minister
+> 管理者 guan3li3zhe3, 秘书 mi4shu1, 部长 bu4chang2
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 主题 zhu3ti2, 主词 zhu3ci2
+sound similarity 2:
+> 主体 zhu3ti3, 首席 shou3xi2, 出席 chu1xi2
+radical:
+> 丸帅 wan2shuai4, 丶帏 zhu3wei2, 丹幌 dan1huang3, 主幗 zhu3guo2, 为巾 wei4jin1
+time spent: 1.781290054321289
+------
+
+[('璐', '僚'), ('玮', '伎'), ('瑱', '作'), ('瓒', '佛'), ('玳', '佣')]
+modern
+现代 xian4dai4
+word2vec:
+> classical, contemporary, primitive
+> 古典 gu3dian3, 同时 tong2shi2, 原始 yuan2shi3
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 现在 xian4zai4
+sound similarity 2:
+> 向外 xiang4wai4, 缎带 duan4dai4, 年代 nian2dai4
+radical:
+> 璐僚 lu4liao2, 玮伎 wei3ji4, 瑱作 tian4zuo4, 瓒佛 zan4fo2, 玳佣 dai4yong4
+time spent: 1.9359819889068604
+------
+
+[('弩', '夸'), ('弳', '奁'), ('引', '奇'), ('弗', '失'), ('弟', '奋')]
+strong
+强大 qiang2da4
+word2vec:
+> weak, broad, considerable
+> 弱 ruo4, 广阔 guang3kuo4, 可观 ke3guan1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 强度 qiang2du4
+sound similarity 2:
+> 强调 qiang2diao4, 墙壁 qiang2bi4, 强暴 qiang2bao4
+radical:
+> 弩夸 nu3kua1, 弳奁 jing4lian2, 引奇 yin3qi2, 弗失 fu2shi1, 弟奋 di4fen4
+time spent: 2.0404160022735596
+------
+
+[('匹', '孽'), ('区', '孤'), ('匿', '季'), ('匽', '孢'), ('医', '子')]
+medicine
+医学 yi4xue2
+word2vec:
+> chemistry, medical, biology
+> 化学 hua4xue2, 医生 yi4sheng1, 生物学 sheng1wu4xue2
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 气绝 qi4jue2, 气厥 qi4jue2, 大学 da4xue2
+radical:
+> 匹孽 pi3nie4, 区孤 qu1gu1, 匿季 ni4ji4, 匽孢 yan3bao1, 医子 yi4zi3
+time spent: 1.779383897781372
+------
+
+[('遂', '私'), ('边', '秣'), ('进', '秕'), ('迦', '秸'), ('迎', '移')]
+process
+过程 guo4cheng2
+word2vec:
+> mechanism, procedure, method
+> 机制 ji1zhi4, 程序 cheng2xu4, 方法 fang1fa3
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 造成 zao4cheng2, 促成 cu4cheng2, 过剩 guo4sheng4
+radical:
+> 遂私 sui4si1, 边秣 bian1mo4, 进秕 jin4bi3, 迦秸 jia1jie1, 迎移 ying2yi2
+time spent: 2.0491819381713867
+------
+
+[('函', '叻'), ('凿', '呈'), ('击', '啉'), ('凶', '嚕'), ('凹', '嚼')]
+sell
+出售 chu1shou4
+word2vec:
+> buy, distribute, invest
+> 买 mai3, 分发 fen1fa1, 投资 tou2zi1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 出示 chu1shi4, 醇厚 chun2hou4
+radical:
+> 函叻 han2le4, 凿呈 zao2cheng2, 击啉 ji2lan2, 凶嚕 xiong1lu1, 凹嚼 ao1jiao2
+time spent: 1.952798843383789
+------
+
+[('睦',), ('瞻',), ('盾',), ('睑',), ('瞑',)]
+blind
+瞎 xia1
+word2vec:
+> deaf, dumb, silly
+> 聋 long2, 哑 ya3, 愚蠢 yu2chun3
+
+sound similarity 0:
+> 虾 xia1
+sound similarity 0 ignore tone:
+> 罅 xia4, 下 xia4, 夏 xia4
+sound similarity 1:
+> 佳 jia1, 痂 jia1, 嘉 jia1
+sound similarity 2:
+> 削 xue1, 靴 xue1, 朽 xiu3
+radical:
+> 睦 mu4, 瞻 zhan1, 盾 dun4, 睑 jian3, 瞑 ming2
+time spent: 1.7163100242614746
+------
+
+[('僚', '僚'), ('伎', '伎'), ('作', '作'), ('佛', '佛'), ('佣', '佣')]
+trust
+信任 xin4ren4
+word2vec:
+> grant, guarantee, welfare
+> 诰 gao4, 保证书 bao3zheng4shu1, 福利 fu2li4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 新任 xin1ren4
+sound similarity 1:
+> 新任 xin1ren4, 聘任 pin4ren4
+sound similarity 2:
+> 浸润 jin4run4, 辨认 bian4ren4, 信奉 xin4feng4
+radical:
+> 僚僚 liao2liao2, 伎伎 ji4ji4, 作作 zuo4zuo4, 佛佛 fo2fo2, 佣佣 yong4yong4
+time spent: 1.8537118434906006
+------
+
+[('狈', '競'), ('猜', '亲'), ('獾', '竞'), ('狍', '立'), ('猙', '端')]
+independent
+独立 du2li4
+word2vec:
+> democratic, active, official
+> 民主的 min2zhu3de5, 活性 huo2xing4, 官方 guan1fang1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 独自 du2zi4, 福利 fu2li4, 奴隶 nu2li4
+sound similarity 2:
+> 娱乐 yu2le4, 目力 mu4li4, 独特 du2te4
+radical:
+> 狈競 bei4jing4, 猜亲 cai1qin1, 獾竞 huan1jing4, 狍立 pao2li4, 猙端 zheng1duan1
+time spent: 1.7539269924163818
+------
+

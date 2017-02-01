@@ -1,0 +1,268 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading word2vec...
+vocab: 61894 dimension: 500
+
+
+
+
+The director of the US Office of Government Ethics has criticised Donald Trump 's plan to hand control of his business empire to his sons before his inauguration on 20 January .
+------
+director
+董事 dong3shi4
+word2vec:
+> assistant, consultant, editor
+> 助理 zhu4li3, 顾问 gu4wen4, 编辑 bian1ji2
+
+sound similarity 0:
+> 懂事 dong3shi4
+sound similarity 0 ignore tone:
+> 懂事 dong3shi4
+sound similarity 1:
+> 顶事 ding3shi4, 永世 yong3shi4, 总是 zong3shi4
+sound similarity 2:
+> 总数 zong3shu4, 公式 gong1shi4, 攻势 gong1shi4
+time spent: 1.991379976272583
+------
+
+plan
+计划 ji4hua2
+word2vec:
+> proposal, mission, initiative
+> 建议 jian4yi4, 任务 ren4wu4, 倡议 chang4yi4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 计画 ji4hua4
+sound similarity 1:
+> 计画 ji4hua4
+sound similarity 2:
+> 寄存 ji4cun2, 进化 jin4hua4, 纪元 ji4yuan2
+time spent: 1.7873339653015137
+------
+
+hand
+递交 di4jiao1
+word2vec:
+> bow, finger, shoulder
+> 鞠躬 ju1gong1, 捻弄 nian3nong4, 承担 cheng2dan4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 塑胶 su4xiao2, 提交 ti2jiao1, 地基 di4ji1
+time spent: 1.8713560104370117
+------
+
+control
+管制 guan3zhi4
+word2vec:
+> power, guidance, command
+> 功率 gong1lv4, 领导 ling3dao3, 命令 ming4ling4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 板滞 ban3zhi4, 关注 guan1zhu4, 管子 guan3zi3
+time spent: 1.9478709697723389
+------
+
+business
+商业 shang1ye4
+word2vec:
+> consumer, management, investment
+> 消费者 xiao1fei4zhe3, 管理 guan3li3, 投资 tou2zi1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 商议 shang1yi4
+sound similarity 2:
+> 上个 shang4ge4, 商榷 shang1que4, 声誉 sheng1yu4
+time spent: 1.871462106704712
+------
+
+empire
+帝国 di4guo2
+word2vec:
+> kingdom, conquest, ruler
+> 王国 wang2guo2, 征服 zheng1fu2, 统治者 tong3zhi4zhe3
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 大国 da4guo2
+sound similarity 2:
+> 对过 dui4guo4, 渡过 du4guo4
+time spent: 1.7536790370941162
+------
+
+`` Every president in modern times has taken the strong medicine of divestiture , '' he said , referring to a process whereby Mr Trump would sell off his corporate assets and put the profits into a blind trust run by an independent trustee .
+------
+president
+主席 zhu3xi2
+word2vec:
+> governor, secretary, minister
+> 管理者 guan3li3zhe3, 秘书 mi4shu1, 部长 bu4chang2
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 主题 zhu3ti2, 主词 zhu3ci2
+sound similarity 2:
+> 主体 zhu3ti3, 阻尼 zu3ni2, 主意 zhu3yi4
+time spent: 1.7432239055633545
+------
+
+modern
+现代 xian4dai4
+word2vec:
+> classical, contemporary, primitive
+> 古典 gu3dian3, 同时 tong2shi2, 原始 yuan2shi3
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 现在 xian4zai4
+sound similarity 2:
+> 恋爱 lian4ai4, 信道 xin4dao4, 连 ... 带 lian2 ... dai4
+time spent: 1.896388053894043
+------
+
+strong
+强大 qiang2da4
+word2vec:
+> weak, broad, considerable
+> 弱 ruo4, 广阔 guang3kuo4, 可观 ke3guan1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 强度 qiang2du4
+sound similarity 2:
+> 强调 qiang2diao4, 墙壁 qiang2bi4, 强固 qiang2gu4
+time spent: 1.872657060623169
+------
+
+medicine
+医学 yi4xue2
+word2vec:
+> chemistry, medical, biology
+> 化学 hua4xue2, 医生 yi4sheng1, 生物学 sheng1wu4xue2
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 意图 yi4tu2, 秘决 mi4jue2, 自觉 zi4jue2
+time spent: 1.7300810813903809
+------
+
+process
+过程 guo4cheng2
+word2vec:
+> mechanism, procedure, method
+> 机制 ji1zhi4, 程序 cheng2xu4, 方法 fang1fa3
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 造成 zao4cheng2, 促成 cu4cheng2, 路程 lu4cheng2
+time spent: 2.0371999740600586
+------
+
+sell
+出售 chu1shou4
+word2vec:
+> buy, distribute, invest
+> 买 mai3, 分发 fen1fa1, 投资 tou2zi1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 
+sound similarity 2:
+> 醇厚 chun2hou4, 出示 chu1shi4
+time spent: 1.8642117977142334
+------
+
+blind
+瞎 xia1
+word2vec:
+> deaf, dumb, silly
+> 聋 long2, 哑 ya3, 愚蠢 yu2chun3
+
+sound similarity 0:
+> 虾 xia1
+sound similarity 0 ignore tone:
+> 虾 xia1, 匣 xia2, 霞 xia2
+sound similarity 1:
+> 消 xiao1, 歊 xiao1, 哮 xiao1
+sound similarity 2:
+> 钦 qin1, 侵 qin1, 亲 qin1
+time spent: 1.6999988555908203
+------
+
+trust
+信任 xin4ren4
+word2vec:
+> grant, guarantee, welfare
+> 诰 gao4, 保证书 bao3zheng4shu1, 福利 fu2li4
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 新任 xin1ren4
+sound similarity 1:
+> 聘任 pin4ren4, 新任 xin1ren4
+sound similarity 2:
+> 辨认 bian4ren4, 细嫩 xi4nen4, 浸润 jin4run4
+time spent: 1.8155670166015625
+------
+
+independent
+独立 du2li4
+word2vec:
+> democratic, active, official
+> 民主的 min2zhu3de5, 活性 huo2xing4, 官方 guan1fang1
+
+sound similarity 0:
+> 
+sound similarity 0 ignore tone:
+> 
+sound similarity 1:
+> 独自 du2zi4, 图例 tu2li4, 得力 de2li4
+sound similarity 2:
+> 答理 da2li3, 妒忌 du4ji4, 服役 fu2yi4
+time spent: 1.6810989379882812
+------
+

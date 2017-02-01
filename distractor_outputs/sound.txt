@@ -1,0 +1,268 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading word2vec...
+vocab: 61894 dimension: 500
+
+
+
+
+The director of the US Office of Government Ethics has criticised Donald Trump 's plan to hand control of his business empire to his sons before his inauguration on 20 January .
+------
+director
+董事
+dimension: 500, cutoff: 10
+> assistant, consultant, editor
+> 助理, 顾问, 编辑
+> zhu4li3, gu4wen4, bian1ji2
+> sound similarity 0:
+> 懂事
+> dong3shi4
+> sound similarity 1:
+> 总是, 永世, 顶事
+> zong3shi4, yong3shi4, ding3shi4
+> sound similarity 2:
+> 统治, 统制, 当事
+> tong3zhi4, tong3zhi4, dang1shi4
+time spent: 2.1621570587158203
+------
+plan
+计划
+dimension: 500, cutoff: 10
+> proposal, mission, initiative
+> 建议, 任务, 倡议
+> jian4yi4, ren4wu4, chang4yi4
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 计画
+> ji4hua4
+> sound similarity 2:
+> 策划, 进化, 屁话
+> ce4hua2, jin4hua4, pi4hua4
+time spent: 1.3935120105743408
+------
+hand
+递交
+dimension: 500, cutoff: 10
+> bow, finger, shoulder
+> 鞠躬, 捻弄, 承担
+> ju1gong1, nian3nong4, cheng2dan4
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 
+> 
+> sound similarity 2:
+> 提交, 塑胶, 大家
+> ti2jiao1, su4xiao2, da4jia1
+time spent: 1.103698968887329
+------
+control
+管制
+dimension: 500, cutoff: 10
+> power, guidance, command
+> 功率, 领导, 命令
+> gong1lv4, ling3dao3, ming4ling4
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 
+> 
+> sound similarity 2:
+> 贯注, 灌注, 感知
+> guan4zhu4, guan4zhu4, gan3zhi1
+time spent: 1.0331108570098877
+------
+business
+商业
+dimension: 500, cutoff: 10
+> consumer, management, investment
+> 消费者, 管理, 投资
+> xiao1fei4zhe3, guan3li3, tou2zi1
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 商议
+> shang1yi4
+> sound similarity 2:
+> 商榷, 生意, 声誉, 生育
+> shang1que4, sheng1yi4, sheng1yu4, sheng1yu4
+time spent: 1.1224958896636963
+------
+empire
+帝国
+dimension: 500, cutoff: 10
+> kingdom, conquest, ruler
+> 王国, 征服, 统治者
+> wang2guo2, zheng1fu2, tong3zhi4zhe3
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 大国
+> da4guo2
+> sound similarity 2:
+> 对过, 渡过
+> dui4guo4, du4guo4
+time spent: 1.013185977935791
+------
+`` Every president in modern times has taken the strong medicine of divestiture , '' he said , referring to a process whereby Mr Trump would sell off his corporate assets and put the profits into a blind trust run by an independent trustee .
+------
+president
+主席
+dimension: 500, cutoff: 10
+> governor, secretary, minister
+> 管理者, 秘书, 部长
+> guan3li3zhe3, mi4shu1, bu4chang2
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 主题, 主词
+> zhu3ti2, zhu3ci2
+> sound similarity 2:
+> 主体, 助词, 止息
+> zhu3ti3, zhu4ci2, zhi3xi1
+time spent: 0.9564697742462158
+------
+modern
+现代
+dimension: 500, cutoff: 10
+> classical, contemporary, primitive
+> 古典, 同时, 原始
+> gu3dian3, tong2shi2, yuan2shi3
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 现在
+> xian4zai4
+> sound similarity 2:
+> 限度, 恋爱, 限制
+> xian4du4, lian4ai4, xian4zhi4
+time spent: 1.062474012374878
+------
+strong
+强大
+dimension: 500, cutoff: 10
+> weak, broad, considerable
+> 弱, 广阔, 可观
+> ruo4, guang3kuo4, ke3guan1
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 强度
+> qiang2du4
+> sound similarity 2:
+> 强暴, 钱袋, 强固
+> qiang2bao4, qian2dai4, qiang2gu4
+time spent: 1.033412218093872
+------
+medicine
+医学
+dimension: 500, cutoff: 10
+> chemistry, medical, biology
+> 化学, 医生, 生物学
+> hua4xue2, yi4sheng1, sheng1wu4xue2
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 
+> 
+> sound similarity 2:
+> 墓穴, 大学, 秘决
+> mu4xue2, da4xue2, mi4jue2
+time spent: 0.9394559860229492
+------
+process
+过程
+dimension: 500, cutoff: 10
+> mechanism, procedure, method
+> 机制, 程序, 方法
+> ji1zhi4, cheng2xu4, fang1fa3
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 
+> 
+> sound similarity 2:
+> 造成, 规程, 促成
+> zao4cheng2, gui1cheng2, cu4cheng2
+time spent: 1.0901670455932617
+------
+sell
+出售
+dimension: 500, cutoff: 10
+> buy, distribute, invest
+> 买, 分发, 投资
+> mai3, fen1fa1, tou2zi1
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 
+> 
+> sound similarity 2:
+> 出示, 醇厚
+> chu1shi4, chun2hou4
+time spent: 1.065006971359253
+------
+blind
+瞎
+dimension: 500, cutoff: 10
+> deaf, dumb, silly
+> 聋, 哑, 愚蠢
+> long2, ya3, yu2chun3
+> sound similarity 0:
+> 虾
+> xia1
+> sound similarity 1:
+> 掐, 心, 忻, 昕, 薪, 芯, 辛, 新, 欣
+> qia1, xin1, xin1, xin1, xin1, xin1, xin1, xin1, xin1
+> sound similarity 2:
+> 挑, 溜, 切
+> tiao1, liu1, qie1
+time spent: 0.9475347995758057
+------
+trust
+信任
+dimension: 500, cutoff: 10
+> grant, guarantee, welfare
+> 诰, 保证书, 福利
+> gao4, bao3zheng4shu1, fu2li4
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 聘任, 新任
+> pin4ren4, xin1ren4
+> sound similarity 2:
+> 辨认, 讯问, 浸润
+> bian4ren4, xun4wen4, jin4run4
+time spent: 1.0120649337768555
+------
+independent
+独立
+dimension: 500, cutoff: 10
+> democratic, active, official
+> 民主的, 活性, 官方
+> min2zhu3de5, huo2xing4, guan1fang1
+> sound similarity 0:
+> 
+> 
+> sound similarity 1:
+> 福利, 得力, 图例
+> fu2li4, de2li4, tu2li4
+> sound similarity 2:
+> 游历, 狐狸, 吉利
+> you2li4, hu2li2, ji2li4
+time spent: 0.924220085144043
+------

@@ -1,0 +1,67 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading word2vec...
+vocab: 98331 dimension: 10
+
+
+
+
+director
+> reporter, interview, award
+> 记者, 晤面, 奖
+------
+plan
+> contract, office, decision
+> 合同, 办公室, 裁
+------
+hand
+> trick, touch, kick
+> 招, 触摸, 踢
+------
+control
+> demand, acquisition, exchange
+> 需求, 获得, 交流
+------
+business
+> training, private, insurance
+> 训练, 列兵, 保险
+------
+empire
+> kingdom, conquest, settlement
+> 王国, 征服, 沉降
+------
+president
+> member, delegate, cabinet
+> 会员, 代表, 柜
+------
+modern
+no enough valid distractors
+------
+strong
+> valuable, individual, favorable
+> 宝贵, 个人, 有利
+------
+medicine
+no enough valid distractors
+------
+process
+> gravity, change, effect
+> 重力, 变动, 影响
+------
+sell
+> buy, collect, manage
+> 买, 收集, 管理
+------
+blind
+> cheerful, wicked, brilliant
+> 快乐, 邪恶, 辉煌
+------
+trust
+> worker, commitment, liberty
+> 工人, 承诺, 自由
+------
+independent
+> principal, official, democratic
+> 主要, 官方, 民主的
+------

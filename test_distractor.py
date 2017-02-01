@@ -10,22 +10,25 @@ def generate(words, tags):
             # print(word)
             # print(tag)
             key = word + '-' + tag
-            print(word)
+            word_translation = generator_w2v.most_frequent_translation[key]
+            # print(word)
+            # print(word_translation)
             # dimension, frequency cutoff
-            test_params = [[10, 5], [100, 5], [100, 10], [500, 10]]
+            # test_params = [[10, 5], [100, 5], [100, 10], [500, 10]]
+            test_params = [[500, 10]]
             for test_param in test_params:
-                print('dimension: {0}, cutoff: {1}'.format(test_param[0], test_param[1]))
+                # print('dimension: {0}, cutoff: {1}'.format(test_param[0], test_param[1]))
                 start = time.time()
                 result = generator_w2v.get_distractors(word=word, 
                     word_pos=tag, 
                     test_type=2, 
                     news_category=any, 
-                    word_translation=generator_w2v.most_frequent_translation[key],
+                    word_translation=word_translation,
                     dimension=test_param[0],
                     cutoff=test_param[1])
                 end = time.time()
                 print("time spent: " + str(end-start))
-            print('------')
+            print('------\n')
 
 if __name__ == "__main__":
     print('\n')
