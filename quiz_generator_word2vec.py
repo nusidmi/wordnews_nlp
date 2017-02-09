@@ -10,6 +10,9 @@ import unicodedata
 
 # http://stackoverflow.com/questions/3797746/how-to-do-a-python-split-on-languages-like-chinese-that-dont-use-whitespace
 _unicode_chr_splitter = _Re( '(?s)((?:[\ud800-\udbff][\udc00-\udfff])|.)' ).split
+
+MAX_SOUND_DISTANCE = 1
+
 def split_unicode_chrs(text):
   return [ chr for chr in _unicode_chr_splitter( text ) if chr ]
 
@@ -120,7 +123,6 @@ class QuizGeneratorW2V(object):
                     most_frequent_translation[english_word+"-"+pos_tag] = chinese_word
         return english_word_tags, chinese_word_tags, most_frequent_translation, pinyin_to_chinese_word
 
-
     def load_word2vec(self, word2vec_binary):
         model = word2vec.load(word2vec_binary)
         print("vocab: {0} dimension: {1}".format(model.vectors.shape[0], model.vectors.shape[1]))
@@ -192,12 +194,18 @@ class QuizGeneratorW2V(object):
 
         # similar sound distractors
         
-        sound_distractors_list, distractors_ignore_tone = self.get_sound_distractors(word_translation)
-        sound_distractors_list_0 = sound_distractors_list[0]
-        sound_distractors_list_1 = sound_distractors_list[1]
-        sound_distractors_list_2 = sound_distractors_list[2]
+        sound_distractors = self.get_sound_distractors(word_translation)
+        mixed_sound_distractors = self.mix_distractors(word_translation, sound_distractors)
+        final_sound_distractors = self.format_distractors_for_display(mixed_sound_distractors)
+
         radical_distractors = self.get_radical_distractors(word_translation)
-        radical_sound_distractors = self.get_radical_sound_distractors(word_translation)
+        mixed_radical_distractors = self.mix_distractors(word_translation, radical_distractors)
+        final_radical_distractors = self.format_distractors_for_display(mixed_radical_distractors)
+        # print(sound_distractors)
+        # print(mixed_sound_distractors)
+        all_raw_distractors = list(set(mixed_sound_distractors) | set(mixed_radical_distractors))
+        ranked_distractors = self.rank_distractors(word_translation, all_raw_distractors)
+        final_ranked_distractors = self.format_distractors_for_display(ranked_distractors)
 
         if len(distractors_list) < 3:
             print("> no enough valid distractors")
@@ -208,109 +216,136 @@ class QuizGeneratorW2V(object):
         print("> " + ", ".join(map(lambda x: x.split('-')[0], keys)))
         print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), distractors_list)))
         
-        print("")
-        print("sound similarity 0:")
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), sound_distractors_list_0)))
+        # print("")
+        # print("sound:")
+        # print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_sound_distractors)))
         
-        print("sound similarity 0 ignore tone:")
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), distractors_ignore_tone)))
-        
-        print("sound similarity 1:")
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), sound_distractors_list_1)))
-        
-        print("sound similarity 2:")
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), sound_distractors_list_2)))
-        
-        print("radical:")
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), radical_distractors)))
+        # print("radical:")
+        # print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_radical_distractors)))
 
-        print("radical and sound similarity 2 ignore tone:")
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), radical_sound_distractors)))
-        radical_sound_distractors
+        print("ranked non-sementic:")
+        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_ranked_distractors)))
 
         return distractors_list
+
+    def rank_distractors(self, source_chinese_word, distractors):
+        distractors_with_score = []
+        for distractor in distractors:
+            score_obj = {}
+            score_obj['distractor'] = distractor
+            score_obj['mix_score'] = self.get_distractor_mix_score(source_chinese_word, distractor)
+            score_obj['sound_score'] = self.get_distractor_sound_score(source_chinese_word, distractor)
+            score_obj['radical_score'] = self.get_distractor_radical_score(source_chinese_word, distractor)
+            score_obj['total_score'] = sum([score_obj['mix_score'], score_obj['sound_score'], score_obj['radical_score']])
+            # print(score_obj)
+            distractors_with_score.append(score_obj)
+
+        sorted_distractors_with_score = sorted(distractors_with_score, key=lambda k: k['total_score'], reverse=True) 
+        
+        limit = 10
+        if len(sorted_distractors_with_score) < 10:
+            limit = len(sorted_distractors_with_score) - 1
+        for i in range(limit):
+            print(sorted_distractors_with_score[i])
+        return [distractor['distractor'] for distractor in sorted_distractors_with_score[:limit]]
+
+    def get_distractor_mix_score(self, source_chinese_word, distractor):
+        characters = split_unicode_chrs(source_chinese_word)
+        score = 0
+        for i, character in enumerate(characters):
+            if character == distractor[i]:
+                score += 5
+        return score
+
+    def mix_distractors(self, source_chinese_word, distractors):
+        # mix with original characters if possible
+        characters = split_unicode_chrs(source_chinese_word)
+        mixed_distractors = []
+
+        if len(distractors) < 2:
+            # only work for distractors with more than 2 characters
+            return distractors
+
+        for distractor in distractors:
+            mixed_distractors.append(distractor)
+            for i, character_distractor in enumerate(distractor):
+                distractor_copy = list(distractor)
+                distractor_copy[i] = characters[i]
+                mixed_distractors.append(tuple(distractor_copy))
+
+        return mixed_distractors
+
+    def format_distractors_for_display(self, distractors):
+        return map(lambda x: "".join(x), distractors)
+
+    def get_distractor_sound_score(self, source_chinese_word, distractor):
+        characters = split_unicode_chrs(source_chinese_word)
+        total_distance = 0
+        total_distance_ignore_tone = 0
+        score = 0
+        for i, character in enumerate(characters):
+            source_pinyin = pinyin.get(character, format="numerical")
+            candidate_pinyin = pinyin.get(distractor[i], format="numerical")
+            distance = levenshtein(source_pinyin, candidate_pinyin)
+            distance_ignore_tone = levenshtein(remove_numbers(source_pinyin), remove_numbers(candidate_pinyin))
+            total_distance += distance
+            total_distance_ignore_tone += distance_ignore_tone
+        if total_distance == 0:
+            score = 5
+        elif total_distance_ignore_tone == 0:
+            score = 4
+        elif total_distance == 1:
+            score = 3
+        else:
+            score = 0
+        return score
+
+    def get_sound_distractors(self, source_chinese_word):
+        characters = split_unicode_chrs(source_chinese_word)
+        distractors = []
+        for source_character in characters:
+            source_pinyin = pinyin.get(source_character, format="numerical")
+            distractors_for_character = []
+            for candidate_pinyin in self.pinyin_to_chinese_word:
+                distance_ignore_tone = levenshtein(remove_numbers(source_pinyin), remove_numbers(candidate_pinyin))
+                distance = levenshtein(source_pinyin, candidate_pinyin)
+                if distance_ignore_tone == 0:
+                    for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
+                        if candidate_chinese_word != source_character:
+                            distractors_for_character.append(candidate_chinese_word)
+                elif distance <= MAX_SOUND_DISTANCE:
+                    for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
+                        if candidate_chinese_word != source_character:
+                            distractors_for_character.append(candidate_chinese_word)
+            distractors.append(distractors_for_character)
+
+        zipped = list(zip(*distractors))
+        return zipped
+
+    def get_distractor_radical_score(self, source_chinese_word, distractor):
+        characters = split_unicode_chrs(source_chinese_word)
+        score = 0
+        for i, character in enumerate(characters):
+            distractor_character = distractor[i]
+            if character in self.chinese_word_radical and distractor_character in self.chinese_word_radical:
+                if self.chinese_word_radical[distractor_character] == self.chinese_word_radical[character]:
+                    score += 5
+        return int(score / len(characters))
 
     def get_radical_distractors(self, source_chinese_word):
         characters = split_unicode_chrs(source_chinese_word)
         distractors = []
-        for character in characters:
-            if character in self.chinese_word_radical:
-                radical = self.chinese_word_radical[character]
+        for source_character in characters:
+            if source_character in self.chinese_word_radical:
+                radical = self.chinese_word_radical[source_character]
                 raw_radical_distractors = list(self.radical_chinese_word[radical])
-                raw_radical_distractors.remove(character)
+                raw_radical_distractors.remove(source_character)
                 if len(raw_radical_distractors) == 0:
                     print("No radical distractors for Chinese character")
                     return []
                 distractors.append(raw_radical_distractors)
-        zipped = list(zip(*distractors))[:5]
-        return map(lambda x: "".join(x), zipped)
-
-    def get_radical_sound_distractors(self, source_chinese_word):
-        characters = split_unicode_chrs(source_chinese_word)
-        distractors = []
-        for character in characters:
-            if character not in self.chinese_word_radical:
-                distractors = []
-                print("Chinese character out of dictionary")
-                break
-            if character in self.chinese_word_radical:
-                radical = self.chinese_word_radical[character]
-                raw_radical_distractors = list(self.radical_chinese_word[radical])
-                raw_radical_distractors.remove(character)
-                filtered_distractors = self.filter_distractors_by_sound_similarity(character, raw_radical_distractors, 0.4)
-                if len(filtered_distractors) == 0:
-                    distractors = []
-                    print("No radical distractors for Chinese character")
-                    break
-                distractors.append(filtered_distractors)
-
-        # mix with original characters if possible
-        if len(distractors) >= 2:
-            for i, character in enumerate(characters):
-                for j in range(len(distractors)):
-                    if i == j:
-                        # insert orginal character
-                        distractors[j].insert(0, character)
-                    else:
-                        # insert duplicated first distractor
-                        distractors[j].insert(0, distractors[j][i])
-        zipped = list(zip(*distractors))[:5]
-        return map(lambda x: "".join(x), zipped)
-
-    def filter_distractors_by_sound_similarity(self, source_chinese_character, raw_chinese_distractors, max_diff):
-        filtered = []
-        for candidate in raw_chinese_distractors:
-            source_pinyin = pinyin.get(source_chinese_character, format="numerical")
-            candidate_pinyin = pinyin.get(candidate, format="numerical")
-            distance_ignore_tone = levenshtein(remove_numbers(source_pinyin), remove_numbers(candidate_pinyin))
-            # print(source_pinyin)
-            # print(candidate)
-            # print(candidate_pinyin)
-            # print(distance_ignore_tone)
-            # print(distance_ignore_tone / len(source_pinyin))
-            if distance_ignore_tone / len(source_pinyin) <= max_diff:
-                filtered.append(candidate)
-        return filtered
-
-    def get_sound_distractors(self, source_chinese_word):
-        source_pinyin = pinyin.get(source_chinese_word, format="numerical")
-        # distractors with distance 0, 1, 2
-        distractors_by_distance = [[], [], []]
-        distractors_ignore_tone = []
-
-        for candidate_pinyin in self.pinyin_to_chinese_word:
-            distance_ignore_tone = levenshtein(remove_numbers(source_pinyin), remove_numbers(candidate_pinyin))
-            if distance_ignore_tone == 0:
-                for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
-                    if candidate_chinese_word != source_chinese_word and len(distractors_ignore_tone) < 3:
-                        distractors_ignore_tone.append(candidate_chinese_word)
-            distance = levenshtein(source_pinyin, candidate_pinyin)
-            if distance <= 2:
-                for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
-                    if candidate_chinese_word != source_chinese_word and len(distractors_by_distance[distance]) < 3:
-                        distractors_by_distance[distance].append(candidate_chinese_word)
-
-        return distractors_by_distance, distractors_ignore_tone
+        zipped = list(zip(*distractors))
+        return zipped
 
     # If the candidate has the same pos tag as the word
     def is_same_form(self, word, word_pos, candidate):
