@@ -7,6 +7,8 @@ import numpy as np
 import json
 from re import compile as _Re
 import unicodedata
+from math import floor
+from mafan import simplify
 
 # http://stackoverflow.com/questions/3797746/how-to-do-a-python-split-on-languages-like-chinese-that-dont-use-whitespace
 _unicode_chr_splitter = _Re( '(?s)((?:[\ud800-\udbff][\udc00-\udfff])|.)' ).split
@@ -31,7 +33,8 @@ class QuizGeneratorW2V(object):
             
             print('loading chinese dict')
             self.chinese_word_radical, \
-            self.radical_chinese_word = self.load_chinese_dict('./quiz_data/makemeahanzi/dictionary.txt')
+            self.radical_chinese_word, \
+            self.chinese_word_decomposition = self.load_chinese_dict('./quiz_data/makemeahanzi/dictionary.txt')
             # print(self.chinese_word_radical)
             # print(self.radical_chinese_word)
 
@@ -56,23 +59,25 @@ class QuizGeneratorW2V(object):
     def load_chinese_dict(self, dict_file):
         chinese_word_radical = {}
         radical_chinese_word = {}
+        chinese_word_decomposition = {}
         with open(dict_file) as f:
             for line in f:
                 obj = json.loads(line)
                 character = obj['character']
                 radical = obj['radical']
+                decomposition = unicodedata.normalize('NFKC', obj['decomposition'])
                 # skip characters that are radicals themselves and cannot be decomposed
                 if character == radical:
-                    if unicodedata.normalize('NFKC', obj['decomposition']) == '?':
+                    if decomposition == '?':
                         # print(character)
                         continue
+                chinese_word_decomposition[character] = split_unicode_chrs(decomposition)[0]
                 chinese_word_radical[character] = radical
                 if radical not in radical_chinese_word:
                     radical_chinese_word[radical] = set([character])
                 else:
                     radical_chinese_word[radical].add(character)
-        
-        return chinese_word_radical, radical_chinese_word
+        return chinese_word_radical, radical_chinese_word, chinese_word_decomposition
 
     # Load the list of english, chinese words and their pos tags from 
     # the dump file of english_chinese_translations tables
@@ -229,14 +234,26 @@ class QuizGeneratorW2V(object):
         return distractors_list
 
     def rank_distractors(self, source_chinese_word, distractors):
+        source_chinese_word_simplified = simplify(source_chinese_word)
         distractors_with_score = []
         for distractor in distractors:
+            distractor_str = self.format_distractors_for_display(distractor)
+            if simplify(distractor_str) == source_chinese_word_simplified:
+                print("tranditional simplified detected")
+                print(source_chinese_word_simplified)
+                continue
             score_obj = {}
             score_obj['distractor'] = distractor
             score_obj['mix_score'] = self.get_distractor_mix_score(source_chinese_word, distractor)
             score_obj['sound_score'] = self.get_distractor_sound_score(source_chinese_word, distractor)
             score_obj['radical_score'] = self.get_distractor_radical_score(source_chinese_word, distractor)
-            score_obj['total_score'] = sum([score_obj['mix_score'], score_obj['sound_score'], score_obj['radical_score']])
+            score_obj['decomposition_score'] = self.get_distractor_decomposition_score(source_chinese_word, distractor)
+            score_obj['total_score'] = sum([ \
+                score_obj['mix_score'], \
+                score_obj['sound_score'], \
+                score_obj['radical_score'], \
+                score_obj['decomposition_score'] \
+                ])
             # print(score_obj)
             distractors_with_score.append(score_obj)
 
@@ -248,6 +265,16 @@ class QuizGeneratorW2V(object):
         for i in range(limit):
             print(sorted_distractors_with_score[i])
         return [distractor['distractor'] for distractor in sorted_distractors_with_score[:limit]]
+
+    def get_distractor_decomposition_score(self, source_chinese_word, distractor):
+        characters = split_unicode_chrs(source_chinese_word)
+        score = 0
+        for i, character in enumerate(characters):
+            if character in self.chinese_word_decomposition and distractor[i] in self.chinese_word_decomposition:
+                if self.chinese_word_decomposition[character] == self.chinese_word_decomposition[distractor[i]]:
+                    score += 0.5
+        return score
+        
 
     def get_distractor_mix_score(self, source_chinese_word, distractor):
         characters = split_unicode_chrs(source_chinese_word)
@@ -295,7 +322,7 @@ class QuizGeneratorW2V(object):
         elif total_distance_ignore_tone == 0:
             score = 4
         elif total_distance == 1:
-            score = 3
+            score = 2
         else:
             score = 0
         return score
@@ -330,7 +357,7 @@ class QuizGeneratorW2V(object):
             if character in self.chinese_word_radical and distractor_character in self.chinese_word_radical:
                 if self.chinese_word_radical[distractor_character] == self.chinese_word_radical[character]:
                     score += 5
-        return int(score / len(characters))
+        return floor(score / len(characters))
 
     def get_radical_distractors(self, source_chinese_word):
         characters = split_unicode_chrs(source_chinese_word)

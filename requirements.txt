@@ -7,3 +7,4 @@ numpy==1.10.4
 cython
 word2vec
 pinyin
+mafan
