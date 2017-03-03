@@ -29,7 +29,9 @@ def generate(words, tags):
             # print(word_translation)
             # dimension, frequency cutoff
             # test_params = [[10, 5], [100, 5], [100, 10], [500, 10]]
-            test_params = [[500, 10]]
+            # 500 dimension is too big for heroku deployment, only used for research purpose
+            # test_params = [[500, 10]] 
+            test_params = [[100, 10]]
             for test_param in test_params:
                 # print('dimension: {0}, cutoff: {1}'.format(test_param[0], test_param[1]))
                 start = time.time()

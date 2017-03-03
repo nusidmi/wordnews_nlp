@@ -17,6 +17,9 @@ _unicode_chr_splitter = _Re( '(?s)((?:[\ud800-\udbff][\udc00-\udfff])|.)' ).spli
 
 MAX_SOUND_DISTANCE = 1
 
+W2V_DIMEN = 100
+W2V_FREQUENCY_CUTOFF = 10
+
 def split_unicode_chrs(text):
   return [ chr for chr in _unicode_chr_splitter( text ) if chr ]
 
@@ -54,7 +57,7 @@ class QuizGeneratorW2V(object):
             self.models = {}
             # dimension, frequency cutoff
             # test_params = [[10, 5], [100, 5], [100, 10], [500, 10]]
-            test_params = [[100, 10]]
+            test_params = [[W2V_DIMEN, W2V_FREQUENCY_CUTOFF]]
             for test_param in test_params:
                 model_key = self.get_model_key(test_param[0], test_param[1])
                 self.models[model_key] = self.load_word2vec('./quiz_data/text8_{0}.bin'.format(model_key))
@@ -191,7 +194,7 @@ class QuizGeneratorW2V(object):
     # distractor can be either chinese or english
     # news_category denotes the topic of the news, e.g., technology, finance, etc
     # test_type decides the langauge of distractors
-    def get_distractors(self, word, word_pos, test_type, news_category, word_translation, dimension=10, cutoff=5):
+    def get_distractors(self, word, word_pos, test_type, news_category, word_translation, dimension=W2V_DIMEN, cutoff=W2V_FREQUENCY_CUTOFF):
         test_type = int(test_type)
         model_key = self.get_model_key(dimension, cutoff)
         self.model = self.models[model_key]
