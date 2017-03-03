@@ -54,7 +54,7 @@ class QuizGeneratorW2V(object):
             self.models = {}
             # dimension, frequency cutoff
             # test_params = [[10, 5], [100, 5], [100, 10], [500, 10]]
-            test_params = [[500, 10]]
+            test_params = [[100, 10]]
             for test_param in test_params:
                 model_key = self.get_model_key(test_param[0], test_param[1])
                 self.models[model_key] = self.load_word2vec('./quiz_data/text8_{0}.bin'.format(model_key))
