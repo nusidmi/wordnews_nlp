@@ -125,13 +125,14 @@ def generate_quiz():
     print(('==' + content['word'] + '=='))
     print((content['word_translation'].encode('utf-8')))
 
-    print("--lin distance--")
-    start = time.time()
-    result = generator.get_distractors(content['word'], content['word_pos'], 
-                                       content['test_type'], content['news_category'])
-    end = time.time()
-    print("time spent: " + str(end-start))
-    print((", ".join(result)))
+    # print("--lin distance--")
+    # start = time.time()
+    # result = generator.get_distractors(content['word'], content['word_pos'], 
+    #                                    content['test_type'], content['news_category'])
+    # end = time.time()
+    # print("time spent: " + str(end-start))
+    # print((", ".join(result)))
+    
     print("--w2v--")
     start = time.time()
     result_w2v = generator_w2v.get_distractors(content['word'], content['word_pos'], 
