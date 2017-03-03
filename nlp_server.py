@@ -124,7 +124,8 @@ def generate_quiz():
        return 'Invalid Parameters'
 
     print(('==' + content['word'] + '=='))
-    print((content['word_translation'].encode('utf-8')))
+    # print((content['word_translation'].encode('utf-8')))
+    print((content['word_translation']))
 
     # print("--lin distance--")
     # start = time.time()
@@ -138,7 +139,7 @@ def generate_quiz():
     start = time.time()
     result_w2v = generator_w2v.get_distractors(content['word'], content['word_pos'], 
                                        content['test_type'], content['news_category'],
-                                       content['word_translation'].encode('utf-8'))
+                                       content['word_translation'])
 
     end = time.time()
     print("time spent: " + str(end-start))
