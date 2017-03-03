@@ -42,6 +42,7 @@ def generate(words, tags):
                     cutoff=test_param[1])
                 end = time.time()
                 print("time spent: " + str(end-start))
+                print(result)
 
             # baseline fast
             # baseline_fast_result = generator_fast.get_distractors(word=word, 

@@ -249,9 +249,9 @@ class QuizGeneratorW2V(object):
             return []
         print(word)
         print(" ".join([word_translation, pinyin.get(word_translation, format="numerical")]))
-        print("word2vec:")
-        print("> " + ", ".join(map(lambda x: x.split('-')[0], keys)))
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), distractors_list)))
+        # print("word2vec:")
+        # print("> " + ", ".join(map(lambda x: x.split('-')[0], keys)))
+        # print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), distractors_list)))
         
         # word2vec non-semantic variant
         start = time.time()
@@ -259,8 +259,8 @@ class QuizGeneratorW2V(object):
             word2vec_non_semantic = self.get_non_semantic_distractors(distractors_list[0], distractor_lang)
             end = time.time()
             print("word2vec non-semantic time spent: " + str(end-start))
-            print("word2vec non-semantic:")
-            print("> " + " ".join([word2vec_non_semantic[0], pinyin.get(word2vec_non_semantic[0], format="numerical")]))
+            # print("word2vec non-semantic:")
+            # print("> " + " ".join([word2vec_non_semantic[0], pinyin.get(word2vec_non_semantic[0], format="numerical")]))
 
 
         # correct translation non-semantic variant
@@ -269,11 +269,16 @@ class QuizGeneratorW2V(object):
         end = time.time()
         print("translation non-semantic time spent: " + str(end-start))
 
-        print("ranked non-semantic:")
-        print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_ranked_distractors)))
-        return distractors_list
+        # print("ranked non-semantic:")
+        # print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_ranked_distractors)))
+        
+        # use word2vec, word2vec non-semantic variant and orrect translation non-semantic variant as final distractors
+        composite_distractors_list = [distractors_list[0], word2vec_non_semantic[0], final_ranked_distractors[0]]
 
-    def get_non_semantic_distractors(self, word_translation, distractor_lang='chinese', verbose=True):
+        # return distractors_list
+        return composite_distractors_list
+
+    def get_non_semantic_distractors(self, word_translation, distractor_lang='chinese', verbose=False):
         final_ranked_distractors = []
         if distractor_lang == 'chinese':
             # sound
@@ -309,8 +314,8 @@ class QuizGeneratorW2V(object):
         for distractor in distractors:
             distractor_str = self.format_distractors_for_display(distractor)
             if simplify(distractor_str) == source_chinese_word_simplified:
-                print("tranditional simplified detected")
-                print(source_chinese_word_simplified)
+                # print("tranditional simplified detected")
+                # print(source_chinese_word_simplified)
                 continue
             characters = split_unicode_chrs(source_chinese_word)
             if not len(characters) == len(distractor):
