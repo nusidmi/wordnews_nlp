@@ -107,7 +107,7 @@ class QuizGenerator(object):
     # knowledge level decides the difficulty of distractors
     def get_distractors(self, word, word_pos, knowledge_level, news_category):
         knowledge_level = int(knowledge_level)
-        print('generating distractors...')
+        # print('generating distractors...')
         if news_category in self.strong_dict:
             self.candidates = list(self.strong_dict[news_category][word_pos].keys())
         else:

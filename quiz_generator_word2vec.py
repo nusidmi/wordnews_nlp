@@ -9,6 +9,8 @@ from re import compile as _Re
 import unicodedata
 from math import floor
 from mafan import simplify
+import codecs
+import time
 
 # http://stackoverflow.com/questions/3797746/how-to-do-a-python-split-on-languages-like-chinese-that-dont-use-whitespace
 _unicode_chr_splitter = _Re( '(?s)((?:[\ud800-\udbff][\udc00-\udfff])|.)' ).split
@@ -28,15 +30,25 @@ class QuizGeneratorW2V(object):
             self.english_word_tags, \
             self.chinese_word_tags, \
             self.most_frequent_translation, \
-            self.pinyin_to_chinese_word = self.load_word_tags('./quiz_data/english_chinese_translations.csv')
+            self.pinyin_to_chinese_word, \
+            self.pinyin_without_tone_to_chinese_word = self.load_word_tags('./quiz_data/english_chinese_translations.csv')
             # print(self.pinyin_to_chinese_word)
             
             print('loading chinese dict')
+            # data from https://github.com/skishore/makemeahanzi
             self.chinese_word_radical, \
             self.radical_chinese_word, \
             self.chinese_word_decomposition = self.load_chinese_dict('./quiz_data/makemeahanzi/dictionary.txt')
             # print(self.chinese_word_radical)
             # print(self.radical_chinese_word)
+
+            print('loading stroke count')
+            # data from http://www.mypolyuweb.hk/~sjpolit/cgi-bin/strokecounter.pl
+            self.chinese_word_hex_stroke_count = self.load_chinese_stroke_count('./quiz_data/totalstrokes.txt')
+
+            print('loading character frequency')
+            # data from http://lingua.mtsu.edu/chinese-computing/statistics/index.html
+            self.chinese_word_cumulative_frequency = self.load_chinese_cumulative_frequency('./quiz_data/CharFreq.txt')
 
             print('loading word2vec...')
             self.models = {}
@@ -55,6 +67,29 @@ class QuizGeneratorW2V(object):
 
     def get_model_key(self, dimension, cutoff):
         return str(dimension) + '_' + str(cutoff)
+
+    def load_chinese_cumulative_frequency(self, cumulative_frequency_file):
+        chinese_word_cumulative_frequency = {}
+        with open(cumulative_frequency_file) as f:
+            for line in f:
+                if line.startswith("/*"):
+                    continue
+                tokens = line.split('\t')
+                character = tokens[1]
+                cumulative_frequency = float(tokens[3])
+                chinese_word_cumulative_frequency[character] = cumulative_frequency
+        # print(chinese_word_cumulative_frequency)
+        return chinese_word_cumulative_frequency
+
+    def load_chinese_stroke_count(self, stroke_count_file):
+        chinese_word_hex_stroke_count = {}
+        with open(stroke_count_file) as f:
+            for line in f:
+                hex_str, count_str = line.split('\t')
+                count = int(count_str.replace('\n', ''))
+                chinese_word_hex_stroke_count[hex_str.lower()] = count
+        # print(chinese_word_hex_stroke_count)
+        return chinese_word_hex_stroke_count
 
     def load_chinese_dict(self, dict_file):
         chinese_word_radical = {}
@@ -87,6 +122,7 @@ class QuizGeneratorW2V(object):
         chinese_word_tags = dict()
         most_frequent_translation = dict()
         pinyin_to_chinese_word = dict()
+        pinyin_without_tone_to_chinese_word = dict()
 
         with open(translation_file) as f:
             for line in f:
@@ -107,6 +143,12 @@ class QuizGeneratorW2V(object):
                 else:
                     pinyin_to_chinese_word[chinese_pinyin] = set([chinese_word])
 
+                chinese_pinyin_without_tone = remove_numbers(chinese_pinyin)
+                if chinese_pinyin_without_tone in pinyin_without_tone_to_chinese_word:
+                    pinyin_without_tone_to_chinese_word[chinese_pinyin_without_tone].add(chinese_word)
+                else:
+                    pinyin_without_tone_to_chinese_word[chinese_pinyin_without_tone] = set([chinese_word])
+
                 if pos_tag_idx not in self.tag_index:
                     #print english_word + ' ' + chinese_word + ' ' + str(pos_tag_idx) + ' ' + str(rank)
                     continue
@@ -126,7 +168,7 @@ class QuizGeneratorW2V(object):
                 if rank==0:
                     #print english_word+'-'+pos_tag + ': ' + chinese_word
                     most_frequent_translation[english_word+"-"+pos_tag] = chinese_word
-        return english_word_tags, chinese_word_tags, most_frequent_translation, pinyin_to_chinese_word
+        return english_word_tags, chinese_word_tags, most_frequent_translation, pinyin_to_chinese_word, pinyin_without_tone_to_chinese_word
 
     def load_word2vec(self, word2vec_binary):
         model = word2vec.load(word2vec_binary)
@@ -169,6 +211,9 @@ class QuizGeneratorW2V(object):
         distractors_list = []
         # print(word)
         # print(word_translation)
+        
+        # word2vec distractor
+        start = time.time()
         candidates = self.generate_similar_words(word)
         # print(candidates)
         no_of_candidates = len(candidates)
@@ -181,7 +226,7 @@ class QuizGeneratorW2V(object):
             candidate = candidates[n]
             candidate_word = candidates[n][0]
             if self.is_same_form(word, word_pos, candidate_word):
-                if distractor_lang=='chinese':
+                if distractor_lang == 'chinese':
                     key = candidate_word +'-'+word_pos
                     if key in self.most_frequent_translation:
                         # print "found translation for " + key
@@ -196,21 +241,8 @@ class QuizGeneratorW2V(object):
                 else:
                     distractors_list.append(candidate_word)
             n += 1
-
-        # similar sound distractors
-        
-        sound_distractors = self.get_sound_distractors(word_translation)
-        mixed_sound_distractors = self.mix_distractors(word_translation, sound_distractors)
-        final_sound_distractors = self.format_distractors_for_display(mixed_sound_distractors)
-
-        radical_distractors = self.get_radical_distractors(word_translation)
-        mixed_radical_distractors = self.mix_distractors(word_translation, radical_distractors)
-        final_radical_distractors = self.format_distractors_for_display(mixed_radical_distractors)
-        # print(sound_distractors)
-        # print(mixed_sound_distractors)
-        all_raw_distractors = list(set(mixed_sound_distractors) | set(mixed_radical_distractors))
-        ranked_distractors = self.rank_distractors(word_translation, all_raw_distractors)
-        final_ranked_distractors = self.format_distractors_for_display(ranked_distractors)
+        end = time.time()
+        print("word2vec time spent: " + str(end-start))
 
         if len(distractors_list) < 3:
             print("> no enough valid distractors")
@@ -221,19 +253,57 @@ class QuizGeneratorW2V(object):
         print("> " + ", ".join(map(lambda x: x.split('-')[0], keys)))
         print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), distractors_list)))
         
-        # print("")
-        # print("sound:")
-        # print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_sound_distractors)))
-        
-        # print("radical:")
-        # print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_radical_distractors)))
+        # word2vec non-semantic variant
+        start = time.time()
+        if len(distractors_list) > 0:
+            word2vec_non_semantic = self.get_non_semantic_distractors(distractors_list[0], distractor_lang)
+            end = time.time()
+            print("word2vec non-semantic time spent: " + str(end-start))
+            print("word2vec non-semantic:")
+            print("> " + " ".join([word2vec_non_semantic[0], pinyin.get(word2vec_non_semantic[0], format="numerical")]))
 
-        print("ranked non-sementic:")
+
+        # correct translation non-semantic variant
+        start = time.time()
+        final_ranked_distractors = self.get_non_semantic_distractors(word_translation, distractor_lang)
+        end = time.time()
+        print("translation non-semantic time spent: " + str(end-start))
+
+        print("ranked non-semantic:")
         print("> " + ", ".join(map(lambda x: " ".join([x, pinyin.get(x, format="numerical")]), final_ranked_distractors)))
-
         return distractors_list
 
-    def rank_distractors(self, source_chinese_word, distractors):
+    def get_non_semantic_distractors(self, word_translation, distractor_lang='chinese', verbose=True):
+        final_ranked_distractors = []
+        if distractor_lang == 'chinese':
+            # sound
+            start = time.time()
+            sound_distractors = self.get_sound_distractors(word_translation)
+            mixed_sound_distractors = self.mix_distractors(word_translation, sound_distractors)
+            final_sound_distractors = self.format_distractors_for_display(mixed_sound_distractors)
+            end = time.time()
+            print("sound distractor generation time spent: " + str(end-start))
+
+            # radical
+            start = time.time()
+            radical_distractors = self.get_radical_distractors(word_translation)
+            mixed_radical_distractors = self.mix_distractors(word_translation, radical_distractors)
+            final_radical_distractors = self.format_distractors_for_display(mixed_radical_distractors)
+            end = time.time()
+            print("radical distractor generation time spent: " + str(end-start))
+
+
+            # ranking
+            start = time.time()
+            all_raw_distractors = list(set(mixed_sound_distractors) | set(mixed_radical_distractors))
+            ranked_distractors = self.rank_distractors(word_translation, all_raw_distractors, verbose)
+            final_ranked_distractors = self.format_distractors_for_display(ranked_distractors)
+            end = time.time()
+            print("ranking distractor time spent: " + str(end-start))
+
+        return final_ranked_distractors
+
+    def rank_distractors(self, source_chinese_word, distractors, verbose):
         source_chinese_word_simplified = simplify(source_chinese_word)
         distractors_with_score = []
         for distractor in distractors:
@@ -242,46 +312,98 @@ class QuizGeneratorW2V(object):
                 print("tranditional simplified detected")
                 print(source_chinese_word_simplified)
                 continue
+            characters = split_unicode_chrs(source_chinese_word)
+            if not len(characters) == len(distractor):
+                continue
             score_obj = {}
             score_obj['distractor'] = distractor
             score_obj['mix_score'] = self.get_distractor_mix_score(source_chinese_word, distractor)
             score_obj['sound_score'] = self.get_distractor_sound_score(source_chinese_word, distractor)
             score_obj['radical_score'] = self.get_distractor_radical_score(source_chinese_word, distractor)
-            score_obj['decomposition_score'] = self.get_distractor_decomposition_score(source_chinese_word, distractor)
+            score_obj['decompo_score'] = self.get_distractor_decomposition_score(source_chinese_word, distractor)
+            score_obj['stroke_count_score'] = self.get_distractor_stroke_count_score(source_chinese_word, distractor)
+            score_obj['frequency_score'] = self.get_distractor_frequency_score(source_chinese_word, distractor)
             score_obj['total_score'] = sum([ \
                 score_obj['mix_score'], \
                 score_obj['sound_score'], \
                 score_obj['radical_score'], \
-                score_obj['decomposition_score'] \
+                score_obj['decompo_score'], \
+                score_obj['stroke_count_score'], \
+                score_obj['frequency_score'] \
                 ])
             # print(score_obj)
             distractors_with_score.append(score_obj)
 
         sorted_distractors_with_score = sorted(distractors_with_score, key=lambda k: k['total_score'], reverse=True) 
         
-        limit = 10
-        if len(sorted_distractors_with_score) < 10:
+        limit = 3
+        if len(sorted_distractors_with_score) < limit:
             limit = len(sorted_distractors_with_score) - 1
-        for i in range(limit):
-            print(sorted_distractors_with_score[i])
+        if verbose:
+            for i in range(limit):
+                print(sorted_distractors_with_score[i])
         return [distractor['distractor'] for distractor in sorted_distractors_with_score[:limit]]
 
-    def get_distractor_decomposition_score(self, source_chinese_word, distractor):
+    def get_distractor_frequency_score(self, source_chinese_word, distractors):
+        HIGH_FREQUENCY_THRESHOLD = 97
+        LOW_FREQUENCY_THRESHOLD = 99
+        characters = split_unicode_chrs(source_chinese_word)
+        score = 0
+        for distractor_character in distractors:
+            if distractor_character in self.chinese_word_cumulative_frequency:
+                cumulative_frequency = self.chinese_word_cumulative_frequency[distractor_character]
+                # print(cumulative_frequency)
+                if cumulative_frequency < HIGH_FREQUENCY_THRESHOLD:
+                    score += 1
+                elif cumulative_frequency > LOW_FREQUENCY_THRESHOLD:
+                    score -= 1
+            else:
+                # print('no frequency data for ' + distractor_character)
+                # no frequency data suggests very low frequency, hence penalty
+                score -= 1.0
+        return floor(score / len(characters))
+
+    def get_distractor_stroke_count_score(self, source_chinese_word, distractors):
+        GOOD_DIFFERENCE_THRESHOLD = 0.2
+        BAD_DIFFERENCE_THRESHOLD = 0.5
+        COMPLEX_CHARACTER_THRESHOLD = 10
         characters = split_unicode_chrs(source_chinese_word)
         score = 0
         for i, character in enumerate(characters):
-            if character in self.chinese_word_decomposition and distractor[i] in self.chinese_word_decomposition:
-                if self.chinese_word_decomposition[character] == self.chinese_word_decomposition[distractor[i]]:
-                    score += 0.5
-        return score
+            character_hex = format(ord(character), 'x')
+            if not len(distractors[i]) == 1:
+                continue
+            distractor_hex = format(ord(distractors[i]), 'x')
+            if character_hex in self.chinese_word_hex_stroke_count and distractor_hex in self.chinese_word_hex_stroke_count:
+                difference = abs(self.chinese_word_hex_stroke_count[character_hex] - self.chinese_word_hex_stroke_count[distractor_hex])
+                percentage_difference = difference / self.chinese_word_hex_stroke_count[character_hex]
+                # print(percentage_difference)
+                if percentage_difference < GOOD_DIFFERENCE_THRESHOLD:
+                    score += 1
+                elif percentage_difference > BAD_DIFFERENCE_THRESHOLD:
+                    score -= 1
+            else:
+                print('no stroke count data')
+            # print(codecs.encode(character.encode("utf-8"), "hex"))
+            # print(character.encode("utf-8").encode("hex"))
+        return floor(score / len(characters))
+
+    def get_distractor_decomposition_score(self, source_chinese_word, distractors):
+        characters = split_unicode_chrs(source_chinese_word)
+        score = 0
+        for i, character in enumerate(characters):
+            if character in self.chinese_word_decomposition and distractors[i] in self.chinese_word_decomposition:
+                if self.chinese_word_decomposition[character] == self.chinese_word_decomposition[distractors[i]]:
+                    score += 1
+        return floor(score / len(characters))
         
 
-    def get_distractor_mix_score(self, source_chinese_word, distractor):
+    def get_distractor_mix_score(self, source_chinese_word, distractors):
         characters = split_unicode_chrs(source_chinese_word)
         score = 0
         for i, character in enumerate(characters):
-            if character == distractor[i]:
-                score += 5
+            if character == distractors[i]:
+                score += 1
         return score
 
     def mix_distractors(self, source_chinese_word, distractors):
@@ -303,7 +425,7 @@ class QuizGeneratorW2V(object):
         return mixed_distractors
 
     def format_distractors_for_display(self, distractors):
-        return map(lambda x: "".join(x), distractors)
+        return list(map(lambda x: "".join(x), distractors))
 
     def get_distractor_sound_score(self, source_chinese_word, distractor):
         characters = split_unicode_chrs(source_chinese_word)
@@ -318,11 +440,11 @@ class QuizGeneratorW2V(object):
             total_distance += distance
             total_distance_ignore_tone += distance_ignore_tone
         if total_distance == 0:
-            score = 5
+            score = 3
         elif total_distance_ignore_tone == 0:
-            score = 4
-        elif total_distance == 1:
             score = 2
+        elif total_distance == 1:
+            score = 1
         else:
             score = 0
         return score
@@ -332,18 +454,25 @@ class QuizGeneratorW2V(object):
         distractors = []
         for source_character in characters:
             source_pinyin = pinyin.get(source_character, format="numerical")
+            source_pinyin_without_tone = remove_numbers(source_pinyin)
             distractors_for_character = []
-            for candidate_pinyin in self.pinyin_to_chinese_word:
-                distance_ignore_tone = levenshtein(remove_numbers(source_pinyin), remove_numbers(candidate_pinyin))
-                distance = levenshtein(source_pinyin, candidate_pinyin)
-                if distance_ignore_tone == 0:
-                    for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
+            # use pinyin without tone to generate candidate instead of with tone
+            # for performance gains, only use tones for ranking
+            for candidate_pinyin in self.pinyin_without_tone_to_chinese_word:
+                # skip pinyin with very different length for performance gain
+                if abs(len(candidate_pinyin) - len(source_pinyin_without_tone)) > (MAX_SOUND_DISTANCE + 1):
+                    continue
+                
+                distance_ignore_tone = levenshtein(source_pinyin_without_tone, candidate_pinyin)
+                # distance = levenshtein(source_pinyin, candidate_pinyin)
+                if distance_ignore_tone <= MAX_SOUND_DISTANCE:
+                    for candidate_chinese_word in self.pinyin_without_tone_to_chinese_word[candidate_pinyin]:
                         if candidate_chinese_word != source_character:
                             distractors_for_character.append(candidate_chinese_word)
-                elif distance <= MAX_SOUND_DISTANCE:
-                    for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
-                        if candidate_chinese_word != source_character:
-                            distractors_for_character.append(candidate_chinese_word)
+                # elif distance <= MAX_SOUND_DISTANCE:
+                #     for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
+                #         if candidate_chinese_word != source_character:
+                #             distractors_for_character.append(candidate_chinese_word)
             distractors.append(distractors_for_character)
 
         zipped = list(zip(*distractors))
@@ -356,7 +485,7 @@ class QuizGeneratorW2V(object):
             distractor_character = distractor[i]
             if character in self.chinese_word_radical and distractor_character in self.chinese_word_radical:
                 if self.chinese_word_radical[distractor_character] == self.chinese_word_radical[character]:
-                    score += 5
+                    score += 2
         return floor(score / len(characters))
 
     def get_radical_distractors(self, source_chinese_word):

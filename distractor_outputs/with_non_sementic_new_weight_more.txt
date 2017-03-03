@@ -1,0 +1,882 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading chinese dict
+loading stroke count
+loading character frequency
+loading word2vec...
+vocab: 61894 dimension: 500
+init...
+loading word category...
+loading ./quiz_data/english_chinese_translations.csv
+init...
+loading word category...
+loading ./quiz_data/english_chinese_translations.csv
+
+
+The director of the US Office of Government Ethics has criticised Donald Trump 's plan to hand control of his business empire to his sons before his inauguration on 20 January .
+------
+director
+主任 zhu3ren4
+word2vec:
+> assistant, consultant, editor
+> 助理 zhu4li3, 顾问 gu4wen4, 编辑 bian1ji2
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('住', '理'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('注', '理'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('驻', '理'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 住理 zhu4li3
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('主', '认'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('主', '份'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('主', '纫'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+ranked non-sementic:
+> 主认 zhu3ren4, 主份 zhu3fen4, 主纫 zhu3ren4
+time spent: 7.105885028839111
+baseline_result
+['王子', '社会党党员', '领导人']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('亡', '子'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('忘', '子'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('王', '自'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 亡子 wang2zi3
+------
+
+plan
+计划 ji4hua2
+word2vec:
+> proposal, mission, initiative
+> 建议 jian4yi4, 任务 ren4wu4, 倡议 chang4yi4
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('建', '仪'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('剑', '议'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('建', '以'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 建仪 jian4yi2
+tranditional simplified detected
+计划
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('讥', '划'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('计', '滑'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('计', '华'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 讥划 ji1hua2, 计滑 ji4hua2, 计华 ji4hua2
+time spent: 7.180861949920654
+baseline_result
+['右', '值', '复合']
+tranditional simplified detected
+右
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('后',), 'sound_score': 1, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('幼',), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('有',), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+baseline_result non-sementic
+> 后 hou4
+------
+
+hand
+递交 di4jiao1
+word2vec:
+> bow, finger, shoulder
+> 鞠躬 ju1gong1, 捻弄 nian3nong4, 承担 cheng2dan4
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('鞠', '攻'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('鞠', '宫'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('鞠', '功'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+word2vec non-sementic:
+> 鞠攻 ju1gong1
+tranditional simplified detected
+递交
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('递', '角'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('递', '焦'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('逖', '交'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+ranked non-sementic:
+> 递角 di4jiao3, 递焦 di4jiao1, 逖交 ti4jiao1
+time spent: 7.2067859172821045
+baseline_result
+['赌钱', '面对', '评估']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('睹', '钱'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('赌', '钤'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': -1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('渡', '钱'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 睹钱 du3qian2
+------
+
+control
+管制 guan3zhi4
+word2vec:
+> power, guidance, command
+> 功率 gong1lv4, 领导 ling3dao3, 命令 ming4ling4
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('功', '律'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('供', '率'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('功', '虑'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 功律 gong1lv4
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('筦', '制'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('管', '纸'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('管', '址'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 筦制 guan3zhi4, 管纸 guan3zhi3, 管址 guan3zhi3
+time spent: 7.208451986312866
+baseline_result
+['意义', '重要性', '财富']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('异', '义'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('益', '义'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('翌', '义'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+baseline_result non-sementic
+> 异义 yi4yi4
+------
+
+business
+商业 shang1ye4
+word2vec:
+> consumer, management, investment
+> 消费者 xiao1fei4zhe3, 管理 guan3li3, 投资 tou2zi1
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('洁', '费', '考'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('洁', '贝', '者'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('消', '贝', '考'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 洁费考 jie2fei4kao3
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('商', '页'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('赏', '业'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('商', '叶'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 商页 shang1ye4, 赏业 shang3ye4, 商叶 shang1ye4
+time spent: 9.045939922332764
+baseline_result
+['佣金', '人员', '板']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('拥', '金'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('俑', '金'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('动', '金'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 拥金 yong3jin1
+------
+
+empire
+帝国 di4guo2
+word2vec:
+> kingdom, conquest, ruler
+> 王国 wang2guo2, 征服 zheng1fu2, 统治者 tong3zhi4zhe3
+tranditional simplified detected
+王国
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('王', '图'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('王', '固'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('王', '果'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 王图 wang2tu2
+tranditional simplified detected
+帝国
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('带', '国'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('帝', '困'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('帮', '国'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 带国 dai4guo2, 帝困 di4kun4, 帮国 bang1guo2
+time spent: 7.125416040420532
+baseline_result
+['区', '领土']
+tranditional simplified detected
+区
+tranditional simplified detected
+区
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('匹',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('曲',), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 3, 'decompo_score': 0, 'distractor': ('乌',), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+baseline_result non-sementic
+> 匹 pi3
+------
+
+sons
+son
+儿子 er2zi3
+word2vec:
+> daughter, brother, wife
+> 女儿 nv3er2, 哥哥 ge1ge1, 妻子 qi1zi3
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('女', '而'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('女', '二'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('籹', '儿'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+word2vec non-sementic:
+> 女而 nv3er2
+tranditional simplified detected
+儿子
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('二', '子'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('儿', '字'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('而', '子'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 二子 er4zi3, 儿字 er2zi4, 而子 er2zi3
+time spent: 6.975023031234741
+baseline_result
+['父亲', '丈夫', '姨妈']
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('父', '侵'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('父', '金'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('父', '竞'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 父侵 fu4qin1
+------
+
+`` Every president in modern times has taken the strong medicine of divestiture , '' he said , referring to a process whereby Mr Trump would sell off his corporate assets and put the profits into a blind trust run by an independent trustee .
+------
+president
+主席 zhu3xi2
+word2vec:
+> governor, secretary, minister
+> 管理者 guan3li3zhe3, 秘书 mi4shu1, 部长 bu4chang2
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('笥', '理', '考'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('笼', '玗', '者'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('贯', '丽', '者'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 笥理考 si4li3kao3
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('筑', '席'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('主', '疲'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('著', '席'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 筑席 zhu2xi2, 主疲 zhu3pi2, 著席 zhu4xi2
+time spent: 8.781514883041382
+baseline_result
+['部长', '首席', '主席']
+No radical distractors for Chinese character
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('部', '偿'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('部', '常'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('惧', '长'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 部偿 bu4chang2
+------
+
+modern
+现代 xian4dai4
+word2vec:
+> classical, contemporary, primitive
+> 古典 gu3dian3, 同时 tong2shi2, 原始 yuan2shi3
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('古', '点'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('古', '其'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('古', '具'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 古点 gu3dian3
+tranditional simplified detected
+现代
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('限', '代'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('现', '待'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('玩', '代'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 限代 xian4dai4, 现待 xian4dai4, 玩代 wan2dai4
+time spent: 7.182166814804077
+baseline_result
+[]
+------
+
+times
+time
+时间 shi2jian1
+word2vec:
+> moment, period, decade
+> 时刻 shi2ke4, 期 qi1, 十 shi2
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('时', '剋'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('时', '课'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('诗', '刻'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 时剋 shi2ke4
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('始', '间'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('饰', '间'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('师', '间'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 始间 shi3jian1, 饰间 shi4jian1, 师间 shi1jian1
+time spent: 7.245138168334961
+baseline_result
+['丰富', '流量', '扩散']
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('风', '富'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('丰', '宿'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('丰', '符'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 风富 feng1fu4
+------
+
+strong
+强大 qiang2da4
+word2vec:
+> weak, broad, considerable
+> 弱 ruo4, 广阔 guang3kuo4, 可观 ke3guan1
+tranditional simplified detected
+弱
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('弹',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('绕',), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('诺',), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+word2vec non-sementic:
+> 弹 dan4
+tranditional simplified detected
+强大
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('墙', '大'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('彊', '大'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('腔', '大'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 墙大 qiang2da4, 彊大 qiang2da4, 腔大 qiang1da4
+time spent: 5.3536951541900635
+baseline_result
+[]
+------
+
+medicine
+医学 yi4xue2
+word2vec:
+> chemistry, medical, biology
+> 化学 hua4xue2, 医生 yi4sheng1, 生物学 sheng1wu4xue2
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('话', '学'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('化', '穴'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('画', '学'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 话学 hua4xue2
+tranditional simplified detected
+医学
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('医', '穴'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('宜', '学'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('医', '雪'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 医穴 yi4xue2, 宜学 yi2xue2, 医雪 yi4xue3
+time spent: 7.070486068725586
+baseline_result
+['纪律', '几何', '手术']
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('级', '律'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('纪', '虑'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('纪', '旅'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 级律 ji2lv4
+------
+
+process
+过程 guo4cheng2
+word2vec:
+> mechanism, procedure, method
+> 机制 ji1zhi4, 程序 cheng2xu4, 方法 fang1fa3
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('机', '治'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('极', '制'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('级', '制'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 机治 ji1zhi4
+tranditional simplified detected
+过程
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('过', '称'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('过', '秤'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('过', '乘'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 过称 guo4cheng1, 过秤 guo4cheng4, 过乘 guo4cheng2
+time spent: 7.22399115562439
+baseline_result
+['活动', '常规', '工作']
+tranditional simplified detected
+活动
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('活', '冻'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('活', '洞'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('活', '纵'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 活冻 huo2dong4
+------
+
+sell
+出售 chu1shou4
+word2vec:
+> buy, distribute, invest
+> 买 mai3, 分发 fen1fa1, 投资 tou2zi1
+tranditional simplified detected
+买
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('乔',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('夺',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('麦',), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+word2vec non-sementic:
+> 乔 qiao2
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('出', '兽'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('出', '首'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('出', '授'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 出兽 chu1shou4, 出首 chu1shou3, 出授 chu1shou4
+time spent: 5.310992956161499
+baseline_result
+['制造', '换', '冲突']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('址', '造'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('指', '造'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('制', '遭'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 址造 zhi3zao4
+------
+
+assets
+asset
+财富 cai2fu4
+word2vec:
+> obstacle, improvement, acquisition
+> 障碍 zhang4ai4, 丰富 feng1fu4, 获得 huo4de2
+tranditional simplified detected
+障碍
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('仗', '碍'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('鄣', '碍'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('帐', '碍'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 仗碍 zhang4ai4
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('材', '富'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('财', '符'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('财', '宿'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 材富 cai2fu4, 财符 cai2fu2, 财宿 cai2su4
+time spent: 7.196678876876831
+baseline_result
+['特权', '信仰', '差分']
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('特', '全'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('牲', '权'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('特', '铨'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+baseline_result non-sementic
+> 特全 te4quan2
+------
+
+profits
+profit
+利润 li4run4
+word2vec:
+> demand, money, credit
+> 需求 xu1qiu2, 钱 qian2, 信用 xin4yong4
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('需', '虬'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('欻', '求'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('藇', '求'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+word2vec non-sementic:
+> 需虬 xu1qiu2
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('利', '混'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('列', '润'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('刺', '润'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 利混 li4hun4, 列润 lie4run4, 刺润 ci4run4
+time spent: 7.070600986480713
+baseline_result
+['捐款', '奖', '部分']
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('措', '款'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('倦', '款'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('狷', '款'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+baseline_result non-sementic
+> 措款 cuo4kuan3
+------
+
+blind
+瞎 xia1
+word2vec:
+> deaf, dumb, silly
+> 聋 long2, 哑 ya3, 愚蠢 yu2chun3
+tranditional simplified detected
+聋
+tranditional simplified detected
+聋
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('笼',), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('隆',), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('联',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+word2vec non-sementic:
+> 笼 long2
+tranditional simplified detected
+瞎
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('睡',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('睛',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('辖',), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+ranked non-sementic:
+> 睡 shui4, 睛 jing1, 辖 xia2
+time spent: 3.574030876159668
+baseline_result
+['过世的', '老年', '免费']
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('逄', '丑', '的'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('过', '与', '白'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('过', '万', '皇'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 逄丑的 pang2chou3de5
+------
+
+trust
+信任 xin4ren4
+word2vec:
+> grant, guarantee, welfare
+> 诰 gao4, 保证书 bao3zheng4shu1, 福利 fu2li4
+tranditional simplified detected
+诰
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('试',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('调',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('诸',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+word2vec non-sementic:
+> 试 shi4
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('信', '仞'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('信', '轫'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('信', '韧'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+ranked non-sementic:
+> 信仞 xin4ren4, 信轫 xin4ren4, 信韧 xin4ren4
+time spent: 5.4577720165252686
+baseline_result
+['收入', '和', '股']
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('守', '入'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('寿', '入'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('收', '蓐'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+baseline_result non-sementic
+> 守入 shou3ru4
+------
+
+independent
+独立 du2li4
+word2vec:
+> democratic, active, official
+> 民主的 min2zhu3de5, 活性 huo2xing4, 官方 guan1fang1
+{'total_score': 2, 'decompo_score': 0, 'distractor': ('银', '主', '得'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 1, 'decompo_score': 0, 'distractor': ('银', '阯', '的'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 1, 'decompo_score': 0, 'distractor': ('嚚', '止', '的'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 0, 'mix_score': 1, 'frequency_score': 0}
+word2vec non-sementic:
+> 银主得 yin2zhu3de2
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('读', '立'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('都', '立'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('毒', '立'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 读立 du2li4, 都立 du1li4, 毒立 du2li4
+time spent: 8.82354998588562
+baseline_result
+[]
+------
+
+The researchers said the findings posed big challenges for pensions and care for elderly people .
+------
+researchers
+findings
+finding
+发现物 fa1xian4wu4
+word2vec:
+> find, consideration, problem
+> 发现 fa1xian4, 考虑 kao3lv4, 问题 wen4ti2
+tranditional simplified detected
+发现
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('发', '剑'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('发', '项'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('发', '信'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 发剑 fa1jian4
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('发', '玡', '牧'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('反', '现', '牲'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('发', '琼', '牝'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+ranked non-sementic:
+> 发玡牧 fa1ya4mu4, 反现牲 fan3xian4sheng1, 发琼牝 fa1qiong2pin4
+time spent: 8.899519920349121
+baseline_result
+['发现']
+tranditional simplified detected
+发现
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('发', '剑'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('发', '项'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('发', '信'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 发剑 fa1jian4
+------
+
+big
+大 da4
+word2vec:
+> pop, toy, lovely
+> 流行的 liu2xing2de5, 玩具的 wan2ju4de5, 可爱 ke3ai4
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('浏', '行', '德'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('洁', '衡', '的'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('湘', '行', '皦'), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+word2vec non-sementic:
+> 浏行德 liu2xing2de2
+tranditional simplified detected
+大
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('夫',), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 3, 'decompo_score': 0, 'distractor': ('天',), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 3, 'decompo_score': 0, 'distractor': ('太',), 'sound_score': 0, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+ranked non-sementic:
+> 夫 fu1, 天 tian1, 太 tai4
+time spent: 7.0406739711761475
+baseline_result
+[]
+------
+
+challenges
+challenge
+挑战 tiao1zhan4
+word2vec:
+> commitment, goal, strategy
+> 承诺 cheng2nuo4, 目标 mu4biao1, 战略 zhan4lve4
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('诚', '诺'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('乘', '诺'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('呈', '诺'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 诚诺 cheng2nuo4
+tranditional simplified detected
+挑战
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('挑', '站'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('挑', '颤'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('挑', '栈'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+ranked non-sementic:
+> 挑站 tiao1zhan4, 挑颤 tiao1zhan4, 挑栈 tiao1zhan4
+time spent: 7.196783065795898
+baseline_result
+['领域', '平衡', '情况']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('凌', '域'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('龄', '域'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('陵', '域'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 凌域 ling2yu4
+------
+
+pensions
+pension
+退休金 tui4xiu1jin1
+word2vec:
+> tax, fund, employment
+> 税 shui4, 基金 ji1jin1, 雇用 gu4yong4
+tranditional simplified detected
+税
+tranditional simplified detected
+税
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('睡',), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('租',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('移',), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+word2vec non-sementic:
+> 睡 shui4
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('逋', '代', '金'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 5, 'decompo_score': 1, 'distractor': ('逃', '伲', '金'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 4, 'decompo_score': 0, 'distractor': ('泰', '修', '金'), 'sound_score': 1, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 逋代金 bu1dai4jin1, 逃伲金 tao2ni3jin1, 泰修金 tai4xiu1jin1
+time spent: 7.1815879344940186
+baseline_result
+['成本', '工资', '奖']
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('陈', '本'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('沉', '本'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('称', '本'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 陈本 chen2ben3
+------
+
+care
+保守 bao3shou3
+word2vec:
+> pleasure, patient, health
+> 乐趣 le4qu4, 患者 huan4zhe3, 健康 jian4kang1
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('乐', '趨'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('乐', '趋'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('乐', '赴'), 'sound_score': 1, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 乐趨 le4qu1
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('保', '首'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('俩', '守'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('保', '宅'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 保首 bao3shou3, 俩守 lia3shou3, 保宅 bao3zhai2
+time spent: 7.1795737743377686
+baseline_result
+['功课', '活动', '实验']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('功', '柯'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('功', '刻'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('攻', '课'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 功柯 gong1ke1
+------
+
+This approach indirectly takes account of all the different factors - smoking rates , medical advances , obesity patterns - that are changing life expectancy .
+------
+approach
+途径 tu2jing4
+word2vec:
+> method, interpretation, understanding
+> 方法 fang1fa3, 解释 jie3shi4, 理解 li3jie3
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('方', '抚'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('方', '洁'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('方', '洒'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+word2vec non-sementic:
+> 方抚 fang1fu3
+tranditional simplified detected
+途径
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('途', '净'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('途', '劲'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('途', '境'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 途净 tu2jing4, 途劲 tu2jing4, 途境 tu2jing4
+time spent: 7.108066082000732
+baseline_result
+['设计', '施工', '写作']
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('社', '计'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('设', '记'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('涉', '计'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 社计 she4ji4
+------
+
+account
+帐户 zhang4hu4
+word2vec:
+> explanation, interpretation, passage
+> 说明 shuo1ming2, 解释 jie3shi4, 通道 tong1dao4
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('说', '鸣'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('说', '暝'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('请', '明'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 说鸣 shuo1ming2
+tranditional simplified detected
+帐户
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('张', '户'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('胀', '户'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('障', '户'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 张户 zhang1hu4, 胀户 zhang4hu4, 障户 zhang4hu4
+time spent: 7.261749029159546
+baseline_result
+['记录', '表示', '笔记']
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('记', '露'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('议', '录'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('记', '陆'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 记露 ji4lu4
+------
+
+different
+不同 bu4tong2
+word2vec:
+> multiple, various, separate
+> 多种 duo1zhong3, 各个 ge4ge4, 个别的 ge4bie2de5
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('多', '终'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('多', '钟'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('夺', '种'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 多终 duo1zhong1
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('不', '彤'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('不', '童'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('不', '铜'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 不彤 bu4tong2, 不童 bu4tong2, 不铜 bu4tong2
+time spent: 7.199642896652222
+baseline_result
+[]
+------
+
+factors
+factor
+因子 yin1zi3
+word2vec:
+> quantity, fraction, measure
+> 数量 shu4liang4, 分数 fen1shu4, 措施 cuo4shi1
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('数', '梁'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('数', '粮'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('数', '亮'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 数梁 shu4liang2
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('阴', '子'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('饮', '子'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('因', '自'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 阴子 yin1zi3, 饮子 yin3zi3, 因自 yin1zi4
+time spent: 7.338468074798584
+baseline_result
+['队伍', '壳', '升']
+tranditional simplified detected
+队伍
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('队', '仵'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('队', '污'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('对', '伍'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 队仵 dui4wu3
+------
+
+rates
+rate
+率 lv4
+word2vec:
+> cost, ratio, inflation
+> 成本 cheng2ben3, 比 bi3, 通货膨胀 tong1huo4peng2zhang4
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('陈', '本'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('沉', '本'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('称', '本'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 陈本 chen2ben3
+tranditional simplified detected
+率
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('绿',), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('虑',), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('律',), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+ranked non-sementic:
+> 绿 lv4, 虑 lv4, 律 lv4
+time spent: 5.441972017288208
+baseline_result
+['比', '百分之', '一部分']
+tranditional simplified detected
+比
+{'total_score': 5, 'decompo_score': 0, 'distractor': ('毕',), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('以',), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+{'total_score': 4, 'decompo_score': 1, 'distractor': ('彼',), 'sound_score': 3, 'stroke_count_score': -1, 'radical_score': 0, 'mix_score': 0, 'frequency_score': 1}
+baseline_result non-sementic
+> 毕 bi4
+------
+
+> no enough valid distractors
+time spent: 0.01674509048461914
+baseline_result
+[]
+------
+
+advances
+advance
+前进 qian2jin4
+word2vec:
+> move, break, push
+> 举动 ju3dong4, 休息 xiu1xi1, 奋力 fen4li4
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('举', '冻'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('举', '洞'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('举', '加'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 举冻 ju3dong4
+tranditional simplified detected
+前进
+{'total_score': 9, 'decompo_score': 1, 'distractor': ('前', '近'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('钱', '进'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('前', '迈'), 'sound_score': 0, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 前近 qian2jin4, 钱进 qian2jin4, 前迈 qian2mai4
+time spent: 7.443586826324463
+baseline_result
+['开端', '流量', '变动']
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('开', '锻'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('开', '断'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('开', '酸'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 开锻 kai1duan4
+------
+
+patterns
+pattern
+模式 mo2shi4
+word2vec:
+> variation, shape, tone
+> 变异 bian4yi4, 形状 xing2zhuang4, 音 yin1
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('便', '异'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('变', '弈'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('变', '宜'), 'sound_score': 2, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 便异 bian4yi4
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('摩', '式'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 0, 'distractor': ('磨', '式'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('漠', '式'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 摩式 mo2shi4, 磨式 mo2shi4, 漠式 mo4shi4
+time spent: 7.435781955718994
+baseline_result
+['日历', '分配', '知识']
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('日', '厉'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('日', '厲'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('日', '厤'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 0}
+baseline_result non-sementic
+> 日厉 ri4li4
+------
+
+life
+生活 sheng1huo2
+word2vec:
+> childhood, career, ambition
+> 童年 tong2nian2, 事业 shi4ye4, 抱负 bao4fu4
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('容', '年'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('通', '年'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('笼', '年'), 'sound_score': 1, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+word2vec non-sementic:
+> 容年 rong2nian2
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('升', '活'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 0, 'distractor': ('生', '或'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 6, 'decompo_score': 1, 'distractor': ('生', '滑'), 'sound_score': 1, 'stroke_count_score': 0, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+ranked non-sementic:
+> 升活 sheng1huo2, 生或 sheng1huo4, 生滑 sheng1hua2
+time spent: 7.62804102897644
+baseline_result
+['机会', '存在', '前景']
+{'total_score': 8, 'decompo_score': 1, 'distractor': ('极', '会'), 'sound_score': 2, 'stroke_count_score': 1, 'radical_score': 2, 'mix_score': 1, 'frequency_score': 1}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('机', '卉'), 'sound_score': 3, 'stroke_count_score': 1, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 0}
+{'total_score': 7, 'decompo_score': 1, 'distractor': ('机', '慧'), 'sound_score': 3, 'stroke_count_score': 0, 'radical_score': 1, 'mix_score': 1, 'frequency_score': 1}
+baseline_result non-sementic
+> 极会 ji2hui4
+------
+
