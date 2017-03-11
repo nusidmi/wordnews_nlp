@@ -37,6 +37,13 @@ class QuizGeneratorW2V(object):
             self.pinyin_without_tone_to_chinese_word = self.load_word_tags('./quiz_data/english_chinese_translations.csv')
             # print(self.pinyin_to_chinese_word)
             
+            # print('pre-compute pinyin distance')
+            # self.pinyin_distance = {}
+            # for candidate_pinyin in self.pinyin_without_tone_to_chinese_word.keys():
+            #     for candidate_pinyin_2 in self.pinyin_without_tone_to_chinese_word.keys():
+            #         self.pinyin_distance[candidate_pinyin + "_" + candidate_pinyin_2] = levenshtein(candidate_pinyin, candidate_pinyin_2)
+            #     print('done' + candidate_pinyin)
+
             print('loading chinese dict')
             # data from https://github.com/skishore/makemeahanzi
             self.chinese_word_radical, \
@@ -291,6 +298,7 @@ class QuizGeneratorW2V(object):
             final_sound_distractors = self.format_distractors_for_display(mixed_sound_distractors)
             end = time.time()
             print("sound distractor generation time spent: " + str(end-start))
+            # mixed_sound_distractors = []
 
             # radical
             start = time.time()
@@ -466,21 +474,30 @@ class QuizGeneratorW2V(object):
             distractors_for_character = []
             # use pinyin without tone to generate candidate instead of with tone
             # for performance gains, only use tones for ranking
-            for candidate_pinyin in self.pinyin_without_tone_to_chinese_word:
-                # skip pinyin with very different length for performance gain
-                if abs(len(candidate_pinyin) - len(source_pinyin_without_tone)) > (MAX_SOUND_DISTANCE + 1):
-                    continue
+            # for candidate_pinyin in self.pinyin_without_tone_to_chinese_word:
+            #     # skip pinyin with very different length for performance gain
+            #     if abs(len(candidate_pinyin) - len(source_pinyin_without_tone)) > (MAX_SOUND_DISTANCE + 1):
+            #         continue
                 
-                distance_ignore_tone = levenshtein(source_pinyin_without_tone, candidate_pinyin)
-                # distance = levenshtein(source_pinyin, candidate_pinyin)
-                if distance_ignore_tone <= MAX_SOUND_DISTANCE:
-                    for candidate_chinese_word in self.pinyin_without_tone_to_chinese_word[candidate_pinyin]:
+            #     dist_key = source_pinyin_without_tone + "_" + candidate_pinyin
+            #     if dist_key in self.pinyin_distance:
+            #         distance_ignore_tone = self.pinyin_distance[dist_key]
+            #     else:
+            #         print('pinyin distance not pre-computed')
+            #         distance_ignore_tone = levenshtein(source_pinyin_without_tone, candidate_pinyin)
+            #     # distance = levenshtein(source_pinyin, candidate_pinyin)
+            #     if distance_ignore_tone <= MAX_SOUND_DISTANCE:
+            #         for candidate_chinese_word in self.pinyin_without_tone_to_chinese_word[candidate_pinyin]:
+            #             if candidate_chinese_word != source_character:
+            #                 distractors_for_character.append(candidate_chinese_word)
+
+            # only use same pinyin to avoid iterating through pinyin list
+            if source_pinyin_without_tone in self.pinyin_without_tone_to_chinese_word:
+                # print(self.pinyin_without_tone_to_chinese_word[source_pinyin_without_tone])
+                for candidate_chinese_word in self.pinyin_without_tone_to_chinese_word[source_pinyin_without_tone]:
                         if candidate_chinese_word != source_character:
                             distractors_for_character.append(candidate_chinese_word)
-                # elif distance <= MAX_SOUND_DISTANCE:
-                #     for candidate_chinese_word in self.pinyin_to_chinese_word[candidate_pinyin]:
-                #         if candidate_chinese_word != source_character:
-                #             distractors_for_character.append(candidate_chinese_word)
+
             distractors.append(distractors_for_character)
 
         zipped = list(zip(*distractors))
