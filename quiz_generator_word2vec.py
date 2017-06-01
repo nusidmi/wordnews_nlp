@@ -288,7 +288,7 @@ class QuizGeneratorW2V(object):
         # return distractors_list
         return composite_distractors_list
 
-    def get_non_semantic_distractors(self, word_translation, distractor_lang='chinese', verbose=False):
+    def get_non_semantic_distractors(self, word_translation, distractor_lang='chinese', verbose=True):
         final_ranked_distractors = []
         if distractor_lang == 'chinese':
             # sound
@@ -333,14 +333,14 @@ class QuizGeneratorW2V(object):
                 continue
             score_obj = {}
             score_obj['distractor'] = distractor
-            score_obj['mix_score'] = self.get_distractor_mix_score(source_chinese_word, distractor)
+            # score_obj['mix_score'] = self.get_distractor_mix_score(source_chinese_word, distractor)
             score_obj['sound_score'] = self.get_distractor_sound_score(source_chinese_word, distractor)
             score_obj['radical_score'] = self.get_distractor_radical_score(source_chinese_word, distractor)
             score_obj['decompo_score'] = self.get_distractor_decomposition_score(source_chinese_word, distractor)
             score_obj['stroke_count_score'] = self.get_distractor_stroke_count_score(source_chinese_word, distractor)
             score_obj['frequency_score'] = self.get_distractor_frequency_score(source_chinese_word, distractor)
             score_obj['total_score'] = sum([ \
-                score_obj['mix_score'], \
+                # score_obj['mix_score'], \
                 score_obj['sound_score'], \
                 score_obj['radical_score'], \
                 score_obj['decompo_score'], \
@@ -377,7 +377,7 @@ class QuizGeneratorW2V(object):
                 # print('no frequency data for ' + distractor_character)
                 # no frequency data suggests very low frequency, hence penalty
                 score -= 1.0
-        return floor(score / len(characters))
+        return score / len(characters)
 
     def get_distractor_stroke_count_score(self, source_chinese_word, distractors):
         GOOD_DIFFERENCE_THRESHOLD = 0.2
@@ -402,7 +402,7 @@ class QuizGeneratorW2V(object):
                 print('no stroke count data')
             # print(codecs.encode(character.encode("utf-8"), "hex"))
             # print(character.encode("utf-8").encode("hex"))
-        return floor(score / len(characters))
+        return score / len(characters)
 
     def get_distractor_decomposition_score(self, source_chinese_word, distractors):
         characters = split_unicode_chrs(source_chinese_word)
@@ -411,16 +411,16 @@ class QuizGeneratorW2V(object):
             if character in self.chinese_word_decomposition and distractors[i] in self.chinese_word_decomposition:
                 if self.chinese_word_decomposition[character] == self.chinese_word_decomposition[distractors[i]]:
                     score += 1
-        return floor(score / len(characters))
+        return score / len(characters)
         
 
-    def get_distractor_mix_score(self, source_chinese_word, distractors):
-        characters = split_unicode_chrs(source_chinese_word)
-        score = 0
-        for i, character in enumerate(characters):
-            if character == distractors[i]:
-                score += 1
-        return score
+    # def get_distractor_mix_score(self, source_chinese_word, distractors):
+    #     characters = split_unicode_chrs(source_chinese_word)
+    #     score = 0
+    #     for i, character in enumerate(characters):
+    #         if character == distractors[i]:
+    #             score += 1
+    #     return score
 
     def mix_distractors(self, source_chinese_word, distractors):
         # mix with original characters if possible
@@ -511,7 +511,7 @@ class QuizGeneratorW2V(object):
             if character in self.chinese_word_radical and distractor_character in self.chinese_word_radical:
                 if self.chinese_word_radical[distractor_character] == self.chinese_word_radical[character]:
                     score += 2
-        return floor(score / len(characters))
+        return score / len(characters)
 
     def get_radical_distractors(self, source_chinese_word):
         characters = split_unicode_chrs(source_chinese_word)

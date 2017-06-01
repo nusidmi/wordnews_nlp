@@ -16,8 +16,8 @@ def generate(words, tags):
             tag = 'NN'
         key = word + '-' + tag
         if tag in ALLOWED_POS_TAGS and key in generator_w2v.most_frequent_translation:
-            # print(word)
-            # print(tag)
+            print(word)
+            print(tag)
             key = word + '-' + tag
             word_translation = generator_w2v.most_frequent_translation[key]
             # hard-code most accurate translations
@@ -31,20 +31,20 @@ def generate(words, tags):
             # test_params = [[10, 5], [100, 5], [100, 10], [500, 10]]
             # 500 dimension is too big for heroku deployment, only used for research purpose
             # test_params = [[500, 10]] 
-            test_params = [[100, 10]]
-            for test_param in test_params:
-                # print('dimension: {0}, cutoff: {1}'.format(test_param[0], test_param[1]))
-                start = time.time()
-                result = generator_w2v.get_distractors(word=word, 
-                    word_pos=tag, 
-                    test_type=2, 
-                    news_category=any, 
-                    word_translation=word_translation,
-                    dimension=test_param[0],
-                    cutoff=test_param[1])
-                end = time.time()
-                print("time spent: " + str(end-start))
-                print(result)
+            # test_params = [[100, 10]]
+            # for test_param in test_params:
+            #     # print('dimension: {0}, cutoff: {1}'.format(test_param[0], test_param[1]))
+            #     start = time.time()
+            #     result = generator_w2v.get_distractors(word=word, 
+            #         word_pos=tag, 
+            #         test_type=2, 
+            #         news_category=any, 
+            #         word_translation=word_translation,
+            #         dimension=test_param[0],
+            #         cutoff=test_param[1])
+            #     end = time.time()
+            #     print("time spent: " + str(end-start))
+            #     print(result)
 
             # baseline fast
             # baseline_fast_result = generator_fast.get_distractors(word=word, 
@@ -55,12 +55,15 @@ def generate(words, tags):
             # print(baseline_fast_result)
 
             # baseline
-            # baseline_result = generator_baseline.get_distractors(word=word, 
-            #         word_pos=tag, 
-            #         knowledge_level=3,
-            #         news_category=any)
-            # print("baseline_result")
-            # print(baseline_result)
+            start = time.time()
+            baseline_result = generator_baseline.get_distractors(word=word, 
+                    word_pos=tag, 
+                    knowledge_level=3,
+                    news_category=any)
+            end = time.time()
+            print("time spent: " + str(end-start))
+            print("baseline_result")
+            print(baseline_result)
             # if len(baseline_result) > 0:
             #     baseline_result_non_sementic = generator_w2v.get_non_sementic_distractors(baseline_result[0])
             #     print("baseline_result non-sementic")

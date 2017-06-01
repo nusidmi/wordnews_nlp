@@ -1,0 +1,714 @@
+init...
+loading translation...
+loading ./quiz_data/english_chinese_translations.csv
+loading chinese dict
+loading stroke count
+loading character frequency
+loading word2vec...
+vocab: 61894 dimension: 100
+init...
+loading word category...
+loading ./quiz_data/english_chinese_translations.csv
+init...
+loading word category...
+loading ./quiz_data/english_chinese_translations.csv
+
+
+The director of the US Office of Government Ethics has criticised Donald Trump 's plan to hand control of his business empire to his sons before his inauguration on 20 January .
+------
+word2vec time spent: 0.01129913330078125
+director
+主任 zhu3ren4
+sound distractor generation time spent: 9.083747863769531e-05
+radical distractor generation time spent: 0.00010704994201660156
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('故', '问'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('顾', '闻'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 1, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('预', '问'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.02996993064880371
+word2vec non-semantic time spent: 0.03019118309020996
+sound distractor generation time spent: 7.605552673339844e-05
+radical distractor generation time spent: 4.887580871582031e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('主', '认'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('主', '纫'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('主', '韧'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.011183977127075195
+translation non-semantic time spent: 0.011327981948852539
+time spent: 0.05288195610046387
+['顾问', '故问', '主认']
+------
+
+word2vec time spent: 0.009512186050415039
+plan
+计划 ji4hua2
+sound distractor generation time spent: 0.00018906593322753906
+radical distractor generation time spent: 3.0994415283203125e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('剑', '议'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('建', '亿'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('践', '议'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.02840709686279297
+word2vec non-semantic time spent: 0.028653860092163086
+sound distractor generation time spent: 9.512901306152344e-05
+radical distractor generation time spent: 0.0002129077911376953
+{'total_score': 7.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('记', '划'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('计', '华'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('讥', '划'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.04920697212219238
+translation non-semantic time spent: 0.04954195022583008
+time spent: 0.08775901794433594
+['建议', '剑议', '记划']
+------
+
+word2vec time spent: 0.008191823959350586
+hand
+递交 di4jiao1
+sound distractor generation time spent: 8.0108642578125e-05
+radical distractor generation time spent: 2.6941299438476562e-05
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('鞠', '功'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('鞠', '供'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('鞠', '攻'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.00919485092163086
+word2vec non-semantic time spent: 0.00932002067565918
+sound distractor generation time spent: 9.989738464355469e-05
+radical distractor generation time spent: 6.29425048828125e-05
+{'total_score': 6.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('迪', '交'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('帝', '交'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('递', '焦'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.023751020431518555
+translation non-semantic time spent: 0.02393507957458496
+time spent: 0.04149985313415527
+['鞠躬', '鞠功', '迪交']
+------
+
+word2vec time spent: 0.008376121520996094
+control
+管制 guan3zhi4
+sound distractor generation time spent: 6.699562072753906e-05
+radical distractor generation time spent: 1.6927719116210938e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('功', '虑'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('攻', '率'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('功', '绿'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.0065000057220458984
+word2vec non-semantic time spent: 0.006600141525268555
+sound distractor generation time spent: 9.179115295410156e-05
+radical distractor generation time spent: 0.00017404556274414062
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('管', '治'), 'stroke_count_score': 1.0}
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('筦', '制'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('管', '志'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.06176495552062988
+translation non-semantic time spent: 0.062058210372924805
+time spent: 0.07708287239074707
+['功率', '功虑', '管治']
+------
+
+word2vec time spent: 0.008252143859863281
+business
+商业 shang1ye4
+sound distractor generation time spent: 8.487701416015625e-05
+radical distractor generation time spent: 5.91278076171875e-05
+{'total_score': 5.333333333333333, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('校', '肥', '者'), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.3333333333333333, 'distractor': ('消', '非', '这'), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('销', '费', '这'), 'stroke_count_score': 0.6666666666666666}
+ranking distractor time spent: 0.011193990707397461
+word2vec non-semantic time spent: 0.01135396957397461
+sound distractor generation time spent: 4.696846008300781e-05
+radical distractor generation time spent: 0.00011897087097167969
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('商', '叶'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('赏', '业'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('伤', '业'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.025032997131347656
+translation non-semantic time spent: 0.025220155715942383
+time spent: 0.044875144958496094
+['消费者', '校肥者', '商叶']
+------
+
+word2vec time spent: 0.00831294059753418
+empire
+帝国 di4guo2
+sound distractor generation time spent: 5.698204040527344e-05
+radical distractor generation time spent: 0.00010895729064941406
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('王', '果'), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('王', '掴'), 'stroke_count_score': 0.5}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('望', '国'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.02611708641052246
+word2vec non-semantic time spent: 0.02630305290222168
+sound distractor generation time spent: 4.792213439941406e-05
+radical distractor generation time spent: 0.00010395050048828125
+{'total_score': 6.0, 'sound_score': 1, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('带', '国'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('帝', '果'), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('帝', '掴'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.026314973831176758
+translation non-semantic time spent: 0.026490211486816406
+time spent: 0.06116509437561035
+['王国', '王果', '带国']
+------
+
+sons
+word2vec time spent: 0.008308887481689453
+son
+儿子 er2zi3
+sound distractor generation time spent: 4.315376281738281e-05
+radical distractor generation time spent: 4.482269287109375e-05
+{'total_score': 4.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('籹', '儿'), 'stroke_count_score': 0.0}
+{'total_score': 4.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 0.0, 'distractor': ('女', '二'), 'stroke_count_score': 1.0}
+{'total_score': 3.5, 'sound_score': 2, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('恧', '儿'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.0011470317840576172
+word2vec non-semantic time spent: 0.001252889633178711
+sound distractor generation time spent: 5.888938903808594e-05
+radical distractor generation time spent: 6.604194641113281e-05
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 0.5, 'distractor': ('儿', '字'), 'stroke_count_score': 0.0}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('二', '子'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('而', '子'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.017510175704956055
+translation non-semantic time spent: 0.017651081085205078
+time spent: 0.027261018753051758
+['女儿', '籹儿', '儿字']
+------
+
+`` Every president in modern times has taken the strong medicine of divestiture , '' he said , referring to a process whereby Mr Trump would sell off his corporate assets and put the profits into a blind trust run by an independent trustee .
+------
+word2vec time spent: 0.008034944534301758
+president
+总统 zong3tong3
+sound distractor generation time spent: 8.296966552734375e-05
+radical distractor generation time spent: 3.504753112792969e-05
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('官', '理', '折'), 'stroke_count_score': 0.6666666666666666}
+{'total_score': 4.333333333333333, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('关', '理', '哲'), 'stroke_count_score': 0.0}
+{'total_score': 4.0, 'sound_score': 0, 'frequency_score': 0.3333333333333333, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('管', '顼', '考'), 'stroke_count_score': 0.6666666666666666}
+ranking distractor time spent: 0.010792016983032227
+word2vec non-semantic time spent: 0.010928869247436523
+sound distractor generation time spent: 5.2928924560546875e-05
+radical distractor generation time spent: 0.00023484230041503906
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('宗', '统'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('总', '铜'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.5, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('总', '筒'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.07289814949035645
+translation non-semantic time spent: 0.0732119083404541
+time spent: 0.09222006797790527
+['管理者', '官理折', '宗统']
+------
+
+word2vec time spent: 0.008305072784423828
+modern
+现代 xian4dai4
+sound distractor generation time spent: 8.0108642578125e-05
+radical distractor generation time spent: 6.198883056640625e-05
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('古', '点'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('股', '典'), 'stroke_count_score': 0.0}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 0.5, 'distractor': ('嘏', '典'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.01532602310180664
+word2vec non-semantic time spent: 0.01548910140991211
+sound distractor generation time spent: 8.296966552734375e-05
+radical distractor generation time spent: 0.00030303001403808594
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('宪', '代'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('现', '待'), 'stroke_count_score': 0.0}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('险', '代'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.07689094543457031
+translation non-semantic time spent: 0.07730913162231445
+time spent: 0.1011500358581543
+['古典', '古点', '宪代']
+------
+
+times
+word2vec time spent: 0.008456945419311523
+time
+时间 shi2jian1
+sound distractor generation time spent: 9.703636169433594e-05
+radical distractor generation time spent: 0.00018906593322753906
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('时', '剋'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('时', '克'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('时', '课'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.050570011138916016
+word2vec non-semantic time spent: 0.05088496208190918
+sound distractor generation time spent: 0.00015306472778320312
+radical distractor generation time spent: 0.00012087821960449219
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('时', '艰'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('时', '坚'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('时', '肩'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.06004905700683594
+translation non-semantic time spent: 0.06035208702087402
+time spent: 0.1197500228881836
+['时刻', '时剋', '时艰']
+------
+
+word2vec time spent: 0.00851583480834961
+strong
+强大 qiang2da4
+sound distractor generation time spent: 3.0994415283203125e-05
+radical distractor generation time spent: 4.887580871582031e-05
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('弹',), 'stroke_count_score': 1.0}
+{'total_score': 4.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('强',), 'stroke_count_score': 0.0}
+{'total_score': 4.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('弥',), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.003329038619995117
+word2vec non-semantic time spent: 0.003426074981689453
+sound distractor generation time spent: 4.792213439941406e-05
+radical distractor generation time spent: 7.486343383789062e-05
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('墙', '大'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('彊', '大'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('腔', '大'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.023524999618530273
+translation non-semantic time spent: 0.023666858673095703
+time spent: 0.035655975341796875
+['弱', '弹', '墙大']
+------
+
+word2vec time spent: 0.008426904678344727
+medicine
+医学 yi4xue2
+sound distractor generation time spent: 5.1021575927734375e-05
+radical distractor generation time spent: 2.4080276489257812e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('化', '穴'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('化', '削'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('画', '学'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.004060983657836914
+word2vec non-semantic time spent: 0.004152059555053711
+sound distractor generation time spent: 5.602836608886719e-05
+radical distractor generation time spent: 3.0040740966796875e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('医', '穴'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('亦', '学'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('医', '削'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.005594015121459961
+translation non-semantic time spent: 0.005700111389160156
+time spent: 0.01833200454711914
+['化学', '化穴', '医穴']
+------
+
+word2vec time spent: 0.009268045425415039
+process
+过程 guo4cheng2
+sound distractor generation time spent: 0.00019502639770507812
+radical distractor generation time spent: 0.000186920166015625
+{'total_score': 7.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('极', '制'), 'stroke_count_score': 1.0}
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('肌', '制'), 'stroke_count_score': 1.0}
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('机', '治'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.07344794273376465
+word2vec non-semantic time spent: 0.0738670825958252
+sound distractor generation time spent: 6.29425048828125e-05
+radical distractor generation time spent: 0.0001881122589111328
+{'total_score': 7.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('过', '称'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('过', '惩'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('过', '乘'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.04900217056274414
+translation non-semantic time spent: 0.049278974533081055
+time spent: 0.13247013092041016
+['机制', '极制', '过称']
+------
+
+word2vec time spent: 0.00913381576538086
+sell
+出售 chu1shou4
+sound distractor generation time spent: 3.886222839355469e-05
+radical distractor generation time spent: 7.295608520507812e-05
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('夺',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 1.0, 'distractor': ('麦',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('夸',), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.005880117416381836
+word2vec non-semantic time spent: 0.006009817123413086
+sound distractor generation time spent: 6.29425048828125e-05
+radical distractor generation time spent: 5.1975250244140625e-05
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('出', '兽'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('出', '授'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('出', '首'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.012625932693481445
+translation non-semantic time spent: 0.012758970260620117
+time spent: 0.027959823608398438
+['买', '夺', '出兽']
+------
+
+assets
+word2vec time spent: 0.009712934494018555
+asset
+财富 cai2fu4
+sound distractor generation time spent: 7.295608520507812e-05
+radical distractor generation time spent: 0.0002639293670654297
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('帐', '碍'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('障', '爱'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('嶂', '碍'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.0849449634552002
+word2vec non-semantic time spent: 0.08531785011291504
+sound distractor generation time spent: 7.295608520507812e-05
+radical distractor generation time spent: 0.00015091896057128906
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('材', '富'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('财', '复'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('财', '赴'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.0432131290435791
+translation non-semantic time spent: 0.04346108436584473
+time spent: 0.13854694366455078
+['障碍', '帐碍', '材富']
+------
+
+profits
+word2vec time spent: 0.008389949798583984
+profit
+利润 li4run4
+sound distractor generation time spent: 7.605552673339844e-05
+radical distractor generation time spent: 2.288818359375e-05
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('虚', '求'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('需', '虬'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('嬃', '求'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.007519960403442383
+word2vec non-semantic time spent: 0.00763702392578125
+sound distractor generation time spent: 3.981590270996094e-05
+radical distractor generation time spent: 0.00020194053649902344
+{'total_score': 6.0, 'sound_score': 1, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('刺', '润'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 1, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('剂', '润'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 1, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('列', '润'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.041422128677368164
+translation non-semantic time spent: 0.04168891906738281
+time spent: 0.057769060134887695
+['需求', '虚求', '刺润']
+------
+
+word2vec time spent: 0.008095026016235352
+blind
+瞎 xia1
+sound distractor generation time spent: 4.601478576660156e-05
+radical distractor generation time spent: 5.3882598876953125e-05
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 1.0, 'distractor': ('笼',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 0.0, 'distractor': ('隆',), 'stroke_count_score': 1.0}
+{'total_score': 4.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 0.0, 'distractor': ('联',), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.004930973052978516
+word2vec non-semantic time spent: 0.005046844482421875
+sound distractor generation time spent: 7.390975952148438e-05
+radical distractor generation time spent: 0.00013303756713867188
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('瞧',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 1.0, 'distractor': ('辖',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('睡',), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.014719963073730469
+translation non-semantic time spent: 0.01494598388671875
+time spent: 0.0281369686126709
+['聋', '笼', '瞧']
+------
+
+word2vec time spent: 0.008417129516601562
+trust
+信任 xin4ren4
+sound distractor generation time spent: 4.7206878662109375e-05
+radical distractor generation time spent: 0.00021600723266601562
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('谈',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('询',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('请',), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.01867818832397461
+word2vec non-semantic time spent: 0.018967151641845703
+sound distractor generation time spent: 0.00013494491577148438
+radical distractor generation time spent: 0.0008370876312255859
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('信', '仞'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('信', '认'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('信', '仁'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.17819786071777344
+translation non-semantic time spent: 0.17922616004943848
+time spent: 0.2066659927368164
+['诰', '谈', '信仞']
+------
+
+word2vec time spent: 0.008738040924072266
+independent
+独立 du2li4
+sound distractor generation time spent: 8.20159912109375e-05
+radical distractor generation time spent: 3.0040740966796875e-05
+{'total_score': 4.666666666666666, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('民', '住', '得'), 'stroke_count_score': 0.3333333333333333}
+{'total_score': 3.9999999999999996, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('民', '猪', '德'), 'stroke_count_score': -0.3333333333333333}
+{'total_score': 3.6666666666666665, 'sound_score': 2, 'frequency_score': 0.3333333333333333, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('愍', '主', '得'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.002443075180053711
+word2vec non-semantic time spent: 0.0025899410247802734
+sound distractor generation time spent: 7.581710815429688e-05
+radical distractor generation time spent: 4.9114227294921875e-05
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('读', '立'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('独', '厉'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('毒', '立'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.014840841293334961
+translation non-semantic time spent: 0.014986991882324219
+time spent: 0.026371002197265625
+['民主的', '民住得', '读立']
+------
+
+The researchers said the findings posed big challenges for pensions and care for elderly people .
+------
+researchers
+findings
+word2vec time spent: 0.008646011352539062
+finding
+发现物 fa1xian4wu4
+sound distractor generation time spent: 4.792213439941406e-05
+radical distractor generation time spent: 2.3126602172851562e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('考', '绿'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('考', '旅'), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('拷', '虑'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.0035080909729003906
+word2vec non-semantic time spent: 0.0035958290100097656
+sound distractor generation time spent: 6.29425048828125e-05
+radical distractor generation time spent: 8.606910705566406e-05
+{'total_score': 4.666666666666666, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('乏', '现', '污'), 'stroke_count_score': 0.3333333333333333}
+{'total_score': 4.666666666666666, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('友', '环', '物'), 'stroke_count_score': 0.6666666666666666}
+{'total_score': 4.333333333333333, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 0.6666666666666666, 'distractor': ('及', '现', '牲'), 'stroke_count_score': 0.6666666666666666}
+ranking distractor time spent: 0.026437997817993164
+translation non-semantic time spent: 0.026604890823364258
+time spent: 0.03891587257385254
+['考虑', '考绿', '乏现污']
+------
+
+word2vec time spent: 0.008516073226928711
+big
+大 da4
+sound distractor generation time spent: 5.698204040527344e-05
+radical distractor generation time spent: 8.296966552734375e-05
+{'total_score': 4.666666666666666, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 1.0, 'distractor': ('刘', '醒', '的'), 'stroke_count_score': 0.0}
+{'total_score': 4.666666666666666, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 1.0, 'distractor': ('刘', '行', '德'), 'stroke_count_score': 0.0}
+{'total_score': 4.333333333333333, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 1.0, 'distractor': ('流', '醒', '德'), 'stroke_count_score': -0.3333333333333333}
+ranking distractor time spent: 0.0171968936920166
+word2vec non-semantic time spent: 0.017355918884277344
+sound distractor generation time spent: 3.600120544433594e-05
+radical distractor generation time spent: 8.392333984375e-05
+{'total_score': 4.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('夫',), 'stroke_count_score': 0.0}
+{'total_score': 3.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 0.0, 'distractor': ('太',), 'stroke_count_score': 0.0}
+{'total_score': 3.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 0.0, 'distractor': ('天',), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.005528926849365234
+translation non-semantic time spent: 0.005666017532348633
+time spent: 0.031584978103637695
+['流行的', '刘醒的', '夫']
+------
+
+challenges
+word2vec time spent: 0.008170843124389648
+challenge
+挑战 tiao1zhan4
+sound distractor generation time spent: 4.8160552978515625e-05
+radical distractor generation time spent: 7.295608520507812e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('乘', '诺'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('城', '诺'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('承', '娜'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.019199848175048828
+word2vec non-semantic time spent: 0.01934194564819336
+sound distractor generation time spent: 5.412101745605469e-05
+radical distractor generation time spent: 0.00011181831359863281
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('跳', '战'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('挑', '湛'), 'stroke_count_score': 0.5}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 0.5, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('挑', '盏'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.025655031204223633
+translation non-semantic time spent: 0.025841951370239258
+time spent: 0.053401947021484375
+['承诺', '乘诺', '跳战']
+------
+
+pensions
+word2vec time spent: 0.008417844772338867
+pension
+退休金 tui4xiu1jin1
+sound distractor generation time spent: 0.00011205673217773438
+radical distractor generation time spent: 6.818771362304688e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('基', '津'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('迹', '金'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('基', '今'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.022504806518554688
+word2vec non-semantic time spent: 0.02270793914794922
+sound distractor generation time spent: 6.985664367675781e-05
+radical distractor generation time spent: 9.989738464355469e-05
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 0.6666666666666666, 'decompo_score': 0.6666666666666666, 'distractor': ('退', '秀', '晋'), 'stroke_count_score': 0.6666666666666666}
+{'total_score': 4.666666666666667, 'sound_score': 0, 'frequency_score': 0.6666666666666666, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('逝', '伴', '金'), 'stroke_count_score': 1.0}
+{'total_score': 4.666666666666666, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('过', '仿', '金'), 'stroke_count_score': 0.6666666666666666}
+ranking distractor time spent: 0.026781082153320312
+translation non-semantic time spent: 0.026972055435180664
+time spent: 0.05815386772155762
+['基金', '基津', '退秀晋']
+------
+
+word2vec time spent: 0.008553028106689453
+care
+保守 bao3shou3
+sound distractor generation time spent: 5.3882598876953125e-05
+radical distractor generation time spent: 5.698204040527344e-05
+{'total_score': 6.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('乐', '趋'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('乐', '趨'), 'stroke_count_score': 1.0}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('乐', '去'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.011420965194702148
+word2vec non-semantic time spent: 0.011548995971679688
+sound distractor generation time spent: 5.91278076171875e-05
+radical distractor generation time spent: 0.00017786026000976562
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 0.5, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('饱', '守'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('保', '首'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('抱', '守'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.052175045013427734
+translation non-semantic time spent: 0.052438974380493164
+time spent: 0.07260489463806152
+['乐趣', '乐趋', '饱守']
+------
+
+This approach indirectly takes account of all the different factors - smoking rates , medical advances , obesity patterns - that are changing life expectancy .
+------
+word2vec time spent: 0.007957935333251953
+approach
+途径 tu2jing4
+sound distractor generation time spent: 4.410743713378906e-05
+radical distractor generation time spent: 7.390975952148438e-05
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('方', '罚'), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('方', '乏'), 'stroke_count_score': 0.5}
+{'total_score': 5.0, 'sound_score': 0, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('方', '洁'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.013826847076416016
+word2vec non-semantic time spent: 0.01396489143371582
+sound distractor generation time spent: 6.604194641113281e-05
+radical distractor generation time spent: 0.0001239776611328125
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('途', '劲'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('徒', '径'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('涂', '径'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.03235197067260742
+translation non-semantic time spent: 0.0325620174407959
+time spent: 0.054533958435058594
+['方法', '方罚', '途劲']
+------
+
+word2vec time spent: 0.008198976516723633
+account
+帐户 zhang4hu4
+sound distractor generation time spent: 4.9114227294921875e-05
+radical distractor generation time spent: 0.000270843505859375
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('说', '暝'), 'stroke_count_score': 0.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 0.5, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('说', '铭'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('说', '名'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.08396410942077637
+word2vec non-semantic time spent: 0.084320068359375
+sound distractor generation time spent: 6.818771362304688e-05
+radical distractor generation time spent: 4.696846008300781e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('仗', '户'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 0.5, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('胀', '户'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('帐', '互'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.015572071075439453
+translation non-semantic time spent: 0.015711069107055664
+time spent: 0.10828208923339844
+['说明', '说暝', '仗户']
+------
+
+word2vec time spent: 0.008949041366577148
+different
+不同 bu4tong2
+sound distractor generation time spent: 6.103515625e-05
+radical distractor generation time spent: 4.410743713378906e-05
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('多', '终'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('多', '钟'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('夺', '种'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.011410951614379883
+word2vec non-semantic time spent: 0.011538028717041016
+sound distractor generation time spent: 5.984306335449219e-05
+radical distractor generation time spent: 0.00011110305786132812
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('步', '同'), 'stroke_count_score': 0.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('布', '同'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('不', '彤'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.027667999267578125
+translation non-semantic time spent: 0.027857065200805664
+time spent: 0.04840087890625
+['多种', '多终', '步同']
+------
+
+factors
+word2vec time spent: 0.008511066436767578
+factor
+因子 yin1zi3
+sound distractor generation time spent: 9.489059448242188e-05
+radical distractor generation time spent: 6.914138793945312e-05
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('澍', '量'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('束', '量'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('数', '亮'), 'stroke_count_score': 0.5}
+ranking distractor time spent: 0.012341976165771484
+word2vec non-semantic time spent: 0.012531042098999023
+sound distractor generation time spent: 9.679794311523438e-05
+radical distractor generation time spent: 8.797645568847656e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('阴', '子'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('音', '子'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('印', '子'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.030035972595214844
+translation non-semantic time spent: 0.030245065689086914
+time spent: 0.05135488510131836
+['数量', '澍量', '阴子']
+------
+
+rates
+word2vec time spent: 0.008203983306884766
+rate
+率 lv4
+sound distractor generation time spent: 5.1021575927734375e-05
+radical distractor generation time spent: 0.00010704994201660156
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('城', '本'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('乘', '本'), 'stroke_count_score': 0.0}
+{'total_score': 5.0, 'sound_score': 2, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('称', '本'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.026443958282470703
+word2vec non-semantic time spent: 0.026623010635375977
+sound distractor generation time spent: 4.696846008300781e-05
+radical distractor generation time spent: 1.0013580322265625e-05
+{'total_score': 5.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 0.0, 'distractor': ('律',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 0.0, 'distractor': ('虑',), 'stroke_count_score': 1.0}
+{'total_score': 5.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 0.0, 'decompo_score': 0.0, 'distractor': ('绿',), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.0013849735260009766
+translation non-semantic time spent: 0.001455068588256836
+time spent: 0.036331892013549805
+['成本', '城本', '律']
+------
+
+word2vec time spent: 0.008563995361328125
+> no enough valid distractors
+time spent: 0.008587837219238281
+[]
+------
+
+advances
+word2vec time spent: 0.007953166961669922
+advance
+前进 qian2jin4
+sound distractor generation time spent: 8.082389831542969e-05
+radical distractor generation time spent: 0.000244140625
+{'total_score': 8.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('休', '悉'), 'stroke_count_score': 1.0}
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 0.5, 'distractor': ('修', '息'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('休', '牺'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.06323814392089844
+word2vec non-semantic time spent: 0.0635981559753418
+sound distractor generation time spent: 0.00014281272888183594
+radical distractor generation time spent: 0.0002429485321044922
+{'total_score': 8.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 2.0, 'decompo_score': 1.0, 'distractor': ('前', '近'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('钱', '进'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 0.5, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('虔', '进'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.06093096733093262
+translation non-semantic time spent: 0.061357975006103516
+time spent: 0.13296294212341309
+['休息', '休悉', '前近']
+------
+
+patterns
+word2vec time spent: 0.008260965347290039
+pattern
+模式 mo2shi4
+sound distractor generation time spent: 9.202957153320312e-05
+radical distractor generation time spent: 3.504753112792969e-05
+{'total_score': 7.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('变', '亦'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('变', '艺'), 'stroke_count_score': 0.5}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('变', '医'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.01297903060913086
+word2vec non-semantic time spent: 0.01312708854675293
+sound distractor generation time spent: 9.918212890625e-05
+radical distractor generation time spent: 4.792213439941406e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('摩', '式'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('磨', '式'), 'stroke_count_score': 1.0}
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('模', '世'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.014719009399414062
+translation non-semantic time spent: 0.01489114761352539
+time spent: 0.03633308410644531
+['变异', '变亦', '摩式']
+------
+
+word2vec time spent: 0.008610963821411133
+life
+生活 sheng1huo2
+sound distractor generation time spent: 5.793571472167969e-05
+radical distractor generation time spent: 2.6941299438476562e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('铜', '年'), 'stroke_count_score': 1.0}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('同', '年'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 2, 'frequency_score': 0.5, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('筒', '年'), 'stroke_count_score': 1.0}
+ranking distractor time spent: 0.006941795349121094
+word2vec non-semantic time spent: 0.007043123245239258
+sound distractor generation time spent: 7.891654968261719e-05
+radical distractor generation time spent: 5.888938903808594e-05
+{'total_score': 6.5, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 1.0, 'distractor': ('升', '活'), 'stroke_count_score': 0.5}
+{'total_score': 6.0, 'sound_score': 3, 'frequency_score': 1.0, 'radical_score': 1.0, 'decompo_score': 0.5, 'distractor': ('声', '活'), 'stroke_count_score': 0.5}
+{'total_score': 5.5, 'sound_score': 3, 'frequency_score': 0.0, 'radical_score': 2.0, 'decompo_score': 0.5, 'distractor': ('甥', '活'), 'stroke_count_score': 0.0}
+ranking distractor time spent: 0.009855985641479492
+translation non-semantic time spent: 0.010010957717895508
+time spent: 0.025722980499267578
+['童年', '铜年', '升活']
+------
+

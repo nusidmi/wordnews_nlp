@@ -161,6 +161,7 @@ class QuizGenerator(object):
                         if distractor_lang=='chinese':
                             key = candidate +'-'+word_pos
                             if key in self.most_frequent_translation:
+                                print(key)
                                 distractors_list.append(self.most_frequent_translation[key])
                         else:
                             distractors_list.append(candidate)
